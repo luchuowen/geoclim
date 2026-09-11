@@ -1,0 +1,14 @@
+/* PLACEHOLDER — owned by Session 0 (docs/03_session_0_foundation.md).
+   Session 0 replaces this with the real import chain:
+     @import '../styles/tokens.css';
+     @import '../styles/base.css';
+     @import '../styles/components/nav.css';
+     @import '../styles/components/buttons.css';
+     ... etc, one per components/*.css file.
+   Do not add design-system rules here directly. */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
