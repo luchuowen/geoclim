@@ -1,0 +1,36 @@
+/* Design tokens — ported verbatim from reference/geoclim_spatial_register.html :root.
+   Do not reinterpret any value; see CLAUDE.md "Design tokens" for the spot-check list. */
+
+:root {
+  --ground: #ffffff;
+  --wash: #ebedfd;
+  --wash-rose: #f4dce3;
+  --panel: #f5f5f5;
+  --panel-line: #ededed;
+  --ink: #02051f;
+  --muted: #6e6e6e;
+  --muted-dim: #9a9a9a;
+  --hairline: #e4e4e4;
+  --accent: #081b99;
+  --accent-soft: #3448c4;
+  --ink-on-accent: #ffffff;
+  --display: 'Crimson Pro', Georgia, serif;
+  --body: 'Inter', -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --max-w: 1280px;
+  --gutter: 96px;
+
+  color-scheme: light;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --gutter: 28px;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --gutter: 20px;
+  }
+}

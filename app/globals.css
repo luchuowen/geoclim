@@ -1,11 +1,16 @@
-/* PLACEHOLDER — owned by Session 0 (docs/03_session_0_foundation.md).
-   Session 0 replaces this with the real import chain:
-     @import '../styles/tokens.css';
-     @import '../styles/base.css';
-     @import '../styles/components/nav.css';
-     @import '../styles/components/buttons.css';
-     ... etc, one per components/*.css file.
-   Do not add design-system rules here directly. */
+@import '../styles/tokens.css';
+@import '../styles/base.css';
+@import '../styles/components/nav.css';
+@import '../styles/components/buttons.css';
+@import '../styles/components/mobile-sheet.css';
+@import '../styles/components/data-panel.css';
+@import '../styles/components/pill.css';
+@import '../styles/components/footer.css';
+
+/* Component CSS owned by later sessions (sector-card.css, module-row.css,
+   proof-item.css, ...) is imported directly by the page/component that
+   uses it, not added here — this file is Session 0's owned file and other
+   sessions must not edit it. */
 
 html,
 body {

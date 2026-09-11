@@ -1,0 +1,121 @@
+/* Base rules — resets, typography, section rhythm, and the cross-cutting
+   .wrap/.hairline/.eyebrow/.mono/.reveal utility classes. Ported verbatim
+   from reference/geoclim_spatial_register.html. */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--ground);
+}
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16.5px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  text-wrap: balance;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-family: var(--display);
+  font-weight: 600;
+}
+
+h2,
+h3 {
+  font-family: var(--body);
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 14px;
+  height: 1px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+.wrap {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.hairline {
+  border-top: 1px solid var(--hairline);
+}
+
+section {
+  padding-block: 112px;
+}
+
+@media (max-width: 900px) {
+  section {
+    padding-block: 64px;
+  }
+}
+
+.mono {
+  font-family: var(--mono);
+}
+
+/* ---------- scroll reveal ----------
+   Utility class shared by every page section that animates in on scroll.
+   The IntersectionObserver wiring that toggles .in-view lives with each
+   page (page-level behaviour), not here — this file only owns the CSS. */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

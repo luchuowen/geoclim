@@ -1,0 +1,63 @@
+/* Footer — ported verbatim from reference/geoclim_spatial_register.html. */
+
+footer {
+  padding-block: 56px;
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--panel);
+}
+
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 760px) {
+  .foot-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+.foot-grid h4 {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-dim);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.foot-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.foot-links a {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.foot-links a:hover {
+  color: var(--ink);
+}
+
+.foot-bottom {
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted-dim);
+}

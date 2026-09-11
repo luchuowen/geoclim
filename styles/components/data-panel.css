@@ -1,0 +1,48 @@
+/* Data panel — ported verbatim from reference/geoclim_spatial_register.html. */
+
+.data-panel {
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.data-panel .panel-canvas {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--panel);
+}
+
+.data-panel .panel-caption {
+  padding: 15px 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--hairline);
+}
+
+.panel-caption .cap-main {
+  font-size: 13.5px;
+  color: var(--ink);
+}
+
+.panel-caption .cap-status {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.panel-coord {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3px 8px;
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+}
