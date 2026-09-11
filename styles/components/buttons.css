@@ -1,0 +1,38 @@
+/* Buttons — ported verbatim from reference/geoclim_spatial_register.html. */
+
+.btn {
+  font-family: var(--body);
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 22px;
+  border-radius: 32px;
+  white-space: nowrap;
+  transition:
+    opacity 0.15s,
+    border-color 0.15s,
+    background 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--ink-on-accent);
+}
+
+.btn-primary:hover {
+  opacity: 0.86;
+}
+
+.btn-secondary {
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  background: #fff;
+}
+
+.btn-secondary:hover {
+  border-color: var(--ink);
+}
