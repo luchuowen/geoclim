@@ -25,6 +25,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# factory local state
+.factory/.stop-gate-state
+.factory/.tsbuildinfo
+
 # editor
 .vscode/
 .idea/

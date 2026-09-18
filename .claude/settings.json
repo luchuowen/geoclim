@@ -1,0 +1,69 @@
+{
+  "effortLevel": "medium",
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Grep(**)",
+      "Glob(**)",
+      "Bash(npm run lint)",
+      "Bash(npm run build)",
+      "Bash(npm run dev:*)",
+      "Bash(npx tsc --noEmit*)",
+      "Bash(bash scripts/factory-check.sh*)",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)"
+    ],
+    "ask": [
+      "Edit(.factory/manifest.json)",
+      "Edit(next.config.js)",
+      "Edit(package.json)",
+      "Edit(tsconfig.json)",
+      "Edit(app/api/**)"
+    ],
+    "deny": [
+      "Bash(git push --force*)",
+      "Bash(git reset --hard*)",
+      "Bash(git rebase*)",
+      "Bash(git commit --amend*)",
+      "Bash(git clean -f*)",
+      "Bash(rm -rf .git*)",
+      "Read(.env*)",
+      "Read(**/*.pem)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/guard.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/stop-gate.sh"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "compact|resume",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/session-context.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
