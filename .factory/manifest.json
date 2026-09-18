@@ -1,0 +1,58 @@
+{
+  "playbook_version": "2.1.0",
+  "applied_migrations": ["0", "2.1.0"],
+  "checks": {
+    "typecheck": "npx tsc --noEmit --incremental --tsBuildInfoFile .factory/.tsbuildinfo",
+    "lint": "npm run lint",
+    "build": "npm run build"
+  },
+  "gates": [
+    {
+      "name": "no-static-export",
+      "pattern": "output:\\s*['\"]export['\"]",
+      "paths": ["next.config.js"],
+      "exclude": [],
+      "description": "next.config.js must not set output:'export' — app/api/contact/route.ts requires Node output. See CLAUDE.md Stack decisions."
+    },
+    {
+      "name": "no-firestore-yet",
+      "pattern": "firebase-admin|firebase/firestore|@google-cloud/firestore",
+      "paths": ["app/**", "components/**", "content/**", "lib/**"],
+      "exclude": [],
+      "description": "Phase 1 touches no Firestore SDK or GCP credentials (docs/01). Content stays in content/*.ts typed arrays."
+    },
+    {
+      "name": "svg-devices-stay-pure",
+      "pattern": "dangerouslySetInnerHTML",
+      "paths": ["lib/svg-devices.ts", "components/ui/WireGlobe.tsx", "components/ui/DataPanel.tsx"],
+      "exclude": [],
+      "description": "SVG devices are pure deterministic TS/React — no dangerouslySetInnerHTML, no DOM mutation (docs/03 §13)."
+    }
+  ],
+  "protected": [
+    "reference/geoclim_spatial_register.html"
+  ],
+  "append_only_dirs": [
+    ".factory/history"
+  ],
+  "critical_paths": [
+    "app/api/**",
+    "next.config.js",
+    "package.json",
+    "package-lock.json",
+    "tsconfig.json"
+  ],
+  "source_globs": [
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "content/**/*.ts",
+    "lib/**/*.ts",
+    "styles/**/*.css"
+  ],
+  "caps": {
+    "claude_md_lines": 80,
+    "decisions_md_lines": 250
+  }
+}
