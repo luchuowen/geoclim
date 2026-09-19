@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import MobileSheet from './MobileSheet';
+import BrandLogo from '@/components/brand/Logo';
 import { NAV_LINKS } from '@/content/site';
 
 /** Site nav — "Direction C, Field": wordmark, flat link row (Home /
@@ -18,7 +19,7 @@ export default function Nav() {
     <>
       <nav className="site-nav">
         <Link href="/" className="site-logo">
-          GeoClim
+          <BrandLogo />
         </Link>
         <div className="site-links">
           {NAV_LINKS.map((link) => {

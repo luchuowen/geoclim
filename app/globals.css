@@ -70,11 +70,61 @@ a {
   margin: 0 auto;
 }
 .site-logo {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 19px;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* ---------- brand mark: solid disc + "GeoClim" (+ optional justified
+   "EAST AFRICA" caption). Used in the nav, mobile sheet, and footer —
+   all of which sit on the site's dark background, so this is a single
+   (dark-context) treatment rather than light/dark variants. */
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-icon-fill {
+  fill: var(--teal);
+}
+.brand-icon-cut {
+  fill: var(--bg);
+}
+.brand-icon-edge {
+  fill: #fff;
+}
+.brand-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+}
+.brand-name {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
   letter-spacing: -0.01em;
+  color: #fff;
+  line-height: 1;
+  white-space: nowrap;
+}
+.brand-caption {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 7px;
+  color: var(--teal);
+  line-height: 1;
+}
+.brand-caption-gap {
+  width: 3px;
+}
+.sf-brand .brand-name {
+  font-size: 21px;
+}
+.sf-brand .brand-caption {
+  font-size: 9.5px;
 }
 .site-links {
   display: none;
@@ -185,11 +235,7 @@ a {
   }
 }
 .sf-brand {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
 }
 .sf-col h4 {
   font-size: 11px;

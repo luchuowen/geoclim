@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import BrandLogo from '@/components/brand/Logo';
 import { FOOTER_COMPANY_LINKS, CONTACT, REGIONAL_OPS } from '@/content/site';
 
 type SectionKey = 'company' | 'contact' | 'regional';
@@ -34,7 +35,9 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="sf-inner">
         <div>
-          <div className="sf-brand">GeoClim East Africa</div>
+          <div className="sf-brand">
+            <BrandLogo tagline size={34} />
+          </div>
           <p className="sf-desc">
             Professional services and technology company delivering geospatial intelligence, AI, and digital
             transformation across Africa. Intelligent technologies that bridge data to action.

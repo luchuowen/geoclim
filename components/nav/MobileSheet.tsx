@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import BrandLogo from '@/components/brand/Logo';
 import { NAV_LINKS } from '@/content/site';
 
 interface MobileSheetProps {
@@ -21,7 +22,9 @@ export default function MobileSheet({ open, onClose }: MobileSheetProps) {
     <div className="mobile-sheet" onClick={onClose}>
       <div className="mobile-sheet-panel" onClick={(e) => e.stopPropagation()}>
         <div className="mobile-sheet-top">
-          <div className="site-logo">GeoClim</div>
+          <div className="site-logo">
+            <BrandLogo />
+          </div>
           <button className="nav-burger" aria-label="Close menu" onClick={onClose}>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
               <path d="M6 6l12 12M18 6L6 18" />
