@@ -601,18 +601,25 @@ a {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
-  opacity: 0.85;
+  opacity: 0.92;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 4px 14px rgba(0, 0, 0, 0.45);
 }
 .l1 {
-  background: linear-gradient(135deg, rgba(110, 231, 199, 0.28), rgba(110, 231, 199, 0.04));
+  background: linear-gradient(135deg, rgba(20, 40, 34, 0.55), rgba(20, 30, 28, 0.25)), url(/images/stack-rockeye.jpg);
+  background-size: cover;
+  background-position: center;
   transform: rotate(-9deg) translate(-26px, 10px);
 }
 .l2 {
-  background: linear-gradient(135deg, rgba(120, 140, 255, 0.26), rgba(120, 140, 255, 0.04));
+  background: linear-gradient(135deg, rgba(24, 28, 54, 0.6), rgba(20, 22, 40, 0.3)), url(/images/stack-pentab.jpg);
+  background-size: cover;
+  background-position: center;
   transform: rotate(-2deg) translate(6px, -4px);
 }
 .l3 {
-  background: linear-gradient(135deg, rgba(255, 190, 120, 0.24), rgba(255, 190, 120, 0.05));
+  background: linear-gradient(135deg, rgba(46, 34, 18, 0.55), rgba(30, 22, 12, 0.25)), url(/images/stack-gis.jpg);
+  background-size: cover;
+  background-position: center;
   transform: rotate(7deg) translate(30px, 18px);
 }
 
