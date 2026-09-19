@@ -45,7 +45,7 @@ export default function CapabilitiesPage() {
         </div>
       </header>
 
-      <div className="grid-cards">
+      <div className="grid-cards cards-4">
         {SERVICE_LINES.map((s) => (
           <div className="info-card" key={s.num}>
             <div className="ic-num">{s.num}</div>

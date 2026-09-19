@@ -569,6 +569,21 @@ a {
     grid-template-columns: 1fr;
   }
 }
+/* Exactly-4-item grids (e.g. Capabilities service lines): fill the row
+   instead of wrapping a lone 4th card onto its own line. */
+.grid-cards.cards-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 960px) {
+  .grid-cards.cards-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .grid-cards.cards-4 {
+    grid-template-columns: 1fr;
+  }
+}
 .info-card {
   background: var(--panel);
   border: 1px solid var(--panel-line);
