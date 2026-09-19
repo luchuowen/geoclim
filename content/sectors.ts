@@ -63,7 +63,7 @@ export const sectors: SectorContent[] = [
     approach:
       "GeoClim combines satellite and aerial imagery with on-the-ground data into a continuously updated view of crop condition, land use and water stress across a season, not a single snapshot. Producers and agribusiness get an early, consistent signal on where a field or block is diverging from expectation, delivered as plain maps and reports rather than raw geospatial output — early enough to act on, not just explain afterwards.",
     relatedModules: [
-      { slug: 'real-time-gis', code: 'SMART GIS', name: 'Real-time GIS' },
+      { slug: 'real-time-gis', code: 'SMART GIS', name: 'Real-time mapping' },
       { slug: 'maps-and-apps', code: 'MNA', name: 'Maps & Apps' },
     ],
     panel: {
@@ -89,8 +89,8 @@ export const sectors: SectorContent[] = [
     approach:
       "GeoClim maps and continuously monitors network assets and the terrain around them, turning scattered field records and imagery into one current, searchable picture of the network. Field teams and control-room staff can see where risk is concentrated and where an incident is unfolding, and route the right response to the right location — coordinated through a shared operating picture rather than separate spreadsheets and radio calls.",
     relatedModules: [
-      { slug: 'incident-emergency-management', code: 'PSIM', name: 'Incident & Emergency Management' },
-      { slug: 'geo-enabled-workflow', code: 'PBPM', name: 'Geo-enabled Workflow' },
+      { slug: 'incident-emergency-management', code: 'PSIM', name: 'Incident & emergency management' },
+      { slug: 'geo-enabled-workflow', code: 'PBPM', name: 'Geo-enabled workflow' },
     ],
     panel: {
       seed: 42,
@@ -115,8 +115,8 @@ export const sectors: SectorContent[] = [
     approach:
       'GeoClim builds and maintains structured, source-traceable geospatial datasets — land parcels, infrastructure, service-delivery footprints — designed to stand up to procurement and audit scrutiny rather than just look good in a presentation. Departments get a shared, current record they can plan against and defend, with the underlying methodology and sourcing visible rather than hidden inside a dashboard.',
     relatedModules: [
-      { slug: 'incident-emergency-management', code: 'PSIM', name: 'Incident & Emergency Management' },
-      { slug: 'geo-enabled-workflow', code: 'PBPM', name: 'Geo-enabled Workflow' },
+      { slug: 'incident-emergency-management', code: 'PSIM', name: 'Incident & emergency management' },
+      { slug: 'geo-enabled-workflow', code: 'PBPM', name: 'Geo-enabled workflow' },
     ],
     panel: {
       seed: 43,
@@ -140,7 +140,7 @@ export const sectors: SectorContent[] = [
       "Land, water and forest change needs continuous monitoring, not periodic surveys, to support real intervention, but most monitoring programmes still run on the cadence of an annual or biennial survey. By the time a change in forest cover, water extent or land condition is documented, the window to intervene while it's still manageable has often closed.",
     approach:
       "GeoClim runs continuous change detection against satellite time series, flagging shifts in forest cover, water extent and land condition as they happen rather than at the next scheduled survey. NGOs and government partners get an ongoing, comparable record of change over time — evidence built to support a specific intervention or funding decision, not a one-off report that ages out of relevance.",
-    relatedModules: [{ slug: 'real-time-gis', code: 'SMART GIS', name: 'Real-time GIS' }],
+    relatedModules: [{ slug: 'real-time-gis', code: 'SMART GIS', name: 'Real-time mapping' }],
     panel: {
       seed: 44,
       caption: 'Mau Forest Complex — canopy change detection',
@@ -163,7 +163,7 @@ export const sectors: SectorContent[] = [
     approach:
       "GeoClim turns satellite and geospatial data into location-specific evidence — current land condition, exposure and change over time — that underwriting and claims teams can reference for a specific policy or claim rather than a regional estimate. The result is risk assessment and claims settlement grounded in what a location actually looks like, not what the average location in that zone is assumed to look like.",
     relatedModules: [
-      { slug: 'real-time-gis', code: 'SMART GIS', name: 'Real-time GIS' },
+      { slug: 'real-time-gis', code: 'SMART GIS', name: 'Real-time mapping' },
       { slug: 'maps-and-apps', code: 'MNA', name: 'Maps & Apps' },
     ],
     panel: {
@@ -190,7 +190,7 @@ export const sectors: SectorContent[] = [
       "GeoClim maps routes, corridors and congestion patterns across the region into one consistent picture, combining imagery and operational data rather than leaving each operator to work from its own partial view. Organisations moving people and goods can plan against the full network — where congestion concentrates, where a corridor is under strain — instead of reacting to problems one route at a time.",
     relatedModules: [
       { slug: 'maps-and-apps', code: 'MNA', name: 'Maps & Apps' },
-      { slug: 'rockeye', code: 'ROCKEYE', name: 'AI Operations Intelligence' },
+      { slug: 'rockeye', code: 'ROCKEYE', name: 'AI-powered operations intelligence' },
     ],
     panel: {
       seed: 46,

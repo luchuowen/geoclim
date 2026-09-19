@@ -1,13 +1,16 @@
 // Homepage content (Session 1 — docs/04_session_1_homepage.md). Hero, thesis,
 // "see/understand/act" and CTA-band copy here are homepage-owned and pulled
 // verbatim from reference/geoclim_spatial_register.html. The sector,
-// platform-module, proof and region arrays below are stand-ins for content
-// that will eventually live in content/sectors.ts, content/platform.ts,
-// content/proof.ts and content/regions.ts (Sessions 2–4) — hard-coded here,
-// matching the approved mockup exactly, so this session doesn't block on
-// those. See CLAUDE.md "File ownership".
+// platform-module, proof and region arrays are wired in from their owning
+// content files (content/sectors.ts, content/platform.ts, content/proof.ts,
+// content/regions.ts — Sessions 2–4) rather than duplicated here, so the
+// homepage always reflects the same data as the rest of the site. See
+// CLAUDE.md "File ownership".
 
-import type { DataPanelSpec, ProofEntry, Region } from './types';
+import type { DataPanelSpec } from './types';
+import { sectors } from './sectors';
+import { platformModules } from './platform';
+import { PROOF_ENTRIES as REAL_PROOF_ENTRIES } from './proof';
 
 export interface HeroTag {
   label: string;
@@ -44,9 +47,9 @@ export const THESIS = {
   lead: 'GeoClim is an East African geospatial intelligence company. We combine mapping, Earth observation and enterprise software so organisations can see what is happening on the ground — and act on it, not just report on it.',
 };
 
-// TODO: import from content/platform.ts once Session 3 lands. Hard-coded
-// here (matching the approved mockup exactly) so Session 1 doesn't block on
-// Session 3 — see CLAUDE.md "File ownership".
+/** Minimal shape the homepage module summary needs — satisfied by the real
+ * `PlatformModuleContent` from content/platform.ts, which is what
+ * `PLATFORM_MODULES` below actually holds. */
 export interface HomePlatformModule {
   code: string;
   name: string;
@@ -58,38 +61,7 @@ export const PLATFORM_SUMMARY = {
   heading: 'One platform, five capabilities.',
 };
 
-export const PLATFORM_MODULES: HomePlatformModule[] = [
-  {
-    code: 'MNA',
-    name: 'Maps & Apps',
-    outcome:
-      'Field-ready mapping tools that put accurate, current spatial data directly into the hands of the teams making decisions.',
-  },
-  {
-    code: 'PBPM',
-    name: 'Geo‑enabled workflow',
-    outcome:
-      'Business processes anchored to location — approvals, inspections and operations routed by where they actually happen.',
-  },
-  {
-    code: 'SMART GIS',
-    name: 'Real‑time mapping',
-    outcome:
-      'Live geographic infrastructure that updates as conditions on the ground change, not on a quarterly refresh cycle.',
-  },
-  {
-    code: 'PSIM',
-    name: 'Incident & emergency management',
-    outcome:
-      'A single operating picture for response teams — coordinating people, assets and geography during an incident in real time.',
-  },
-  {
-    code: 'ROCKEYE',
-    name: 'AI‑powered operations intelligence',
-    outcome:
-      "RockEye ERP applies AI to workflow automation, asset tracking and predictive maintenance across an organisation's operations.",
-  },
-];
+export const PLATFORM_MODULES: HomePlatformModule[] = platformModules;
 
 export const SEE_UNDERSTAND_ACT = {
   eyebrow: 'From data to decision',
@@ -116,67 +88,16 @@ export const SIU_PANELS: SiuPanel[] = [
   },
 ];
 
-// TODO: import from content/sectors.ts once Session 2 lands. Hard-coded
-// here (matching the approved mockup exactly) so Session 1 doesn't block on
-// Session 2 — see CLAUDE.md "File ownership".
-export interface HomeSector {
-  slug: string;
-  name: string;
-  description: string;
-  tags: string[];
-  iconPath: string;
-}
-
 export const SECTORS_PREVIEW = {
   eyebrow: 'Sectors',
   heading: 'Built around the problems that matter here.',
 };
 
-export const SECTORS: HomeSector[] = [
-  {
-    slug: 'agriculture-food-systems',
-    name: 'Agriculture & Food Systems',
-    description:
-      'Crop and land monitoring that helps producers and agribusiness plan a season with real information, not guesswork.',
-    tags: ['ENTERPRISE', 'NGO'],
-    iconPath: 'M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6',
-  },
-  {
-    slug: 'utilities-infrastructure',
-    name: 'Utilities & Infrastructure',
-    description: 'Asset and network intelligence for power, water and transport operators managing risk across wide territory.',
-    tags: ['UTILITY', 'ENTERPRISE'],
-    iconPath: 'M13 2 3 14h7l-1 8 10-12h-7l1-8z',
-  },
-  {
-    slug: 'government-public-sector',
-    name: 'Government & Public Sector',
-    description: 'Land, planning and service-delivery data structured for procurement-grade transparency and accountability.',
-    tags: ['GOVERNMENT'],
-    iconPath: 'M12 3 3 7v2h18V7l-9-4zM5 10v9M9 10v9M15 10v9M19 10v9M3 21h18',
-  },
-  {
-    slug: 'climate-environment',
-    name: 'Climate & Environment',
-    description: 'Change detection for water, forest and land resources — built to support monitoring, not just mapping.',
-    tags: ['NGO', 'GOVERNMENT'],
-    iconPath: 'M12 2C8 6 5 9.5 5 13.5a7 7 0 0 0 14 0C19 9.5 16 6 12 2z',
-  },
-  {
-    slug: 'insurance-risk',
-    name: 'Insurance & Risk',
-    description: 'Location-based risk data that gives underwriters and claims teams ground-truth instead of assumption.',
-    tags: ['ENTERPRISE'],
-    iconPath: 'M12 2 4 6v6c0 5 3.5 8.7 8 10 4.5-1.3 8-5 8-10V6l-8-4z',
-  },
-  {
-    slug: 'transport-logistics',
-    name: 'Transport & Logistics',
-    description: 'Route, corridor and congestion intelligence for organisations moving people and goods across the region.',
-    tags: ['ENTERPRISE', 'GOVERNMENT'],
-    iconPath: 'M3 12h18M3 12l4-4M3 12l4 4M21 12l-4-4M21 12l-4 4',
-  },
-];
+/** The six sectors, sourced straight from content/sectors.ts (SectorCard's
+ * `iconKey` — not a homepage-only `iconPath` — resolves to an icon via
+ * `components/sectors/sectorIcons.ts`, same as the sector hub/detail
+ * pages). */
+export const SECTORS = sectors;
 
 export const STATEMENT_BAND = {
   eyebrow: 'Sovereign by design',
@@ -190,27 +111,7 @@ export const PROOF_PREVIEW = {
   lead: 'Every engagement below carries a status marker. Where GeoClim has client-confirmed outcomes, they will say so plainly. Where a figure is representative pending confirmation, the site will say that too.',
 };
 
-// TODO: import from content/proof.ts once Session 4 lands.
-export const PROOF_ENTRIES: ProofEntry[] = [
-  {
-    id: 'agriculture-precision-ag',
-    sector: 'AGRICULTURE',
-    copy: 'Crop-yield monitoring across a multi-county precision-agriculture engagement.',
-    status: 'ILLUSTRATIVE · PENDING CONFIRMATION',
-  },
-  {
-    id: 'utilities-water-loss',
-    sector: 'UTILITIES',
-    copy: "Water-network loss mapping supporting an infrastructure operator's reduction programme.",
-    status: 'ILLUSTRATIVE · PENDING CONFIRMATION',
-  },
-  {
-    id: 'transport-corridor-congestion',
-    sector: 'TRANSPORT',
-    copy: 'Corridor congestion analysis informing a regional transport-planning study.',
-    status: 'ILLUSTRATIVE · PENDING CONFIRMATION',
-  },
-];
+export const PROOF_ENTRIES = REAL_PROOF_ENTRIES;
 
 export const REGION_SUMMARY = {
   eyebrow: 'Where we work',
@@ -219,21 +120,12 @@ export const REGION_SUMMARY = {
   countryList: 'Kenya (HQ) · Uganda · Tanzania · Rwanda · Ethiopia · Zambia · Malawi · DRC · Mozambique · Zimbabwe',
 };
 
-// TODO: import from content/regions.ts once Session 4 lands. angle/dist
-// values ported verbatim from reference `buildRegionGlobe()` — hand-tuned
-// for visual balance, do not recalculate.
-export const REGIONS: Region[] = [
-  { id: 'kenya', name: 'KENYA', hub: true, angle: 0, dist: 0 },
-  { id: 'uganda', name: 'UGANDA', angle: 200, dist: 0.6 },
-  { id: 'tanzania', name: 'TANZANIA', angle: 258, dist: 0.68 },
-  { id: 'rwanda', name: 'RWANDA', angle: 212, dist: 0.85 },
-  { id: 'ethiopia', name: 'ETHIOPIA', angle: 66, dist: 0.68 },
-  { id: 'zambia', name: 'ZAMBIA', angle: 250, dist: 0.94 },
-  { id: 'malawi', name: 'MALAWI', angle: 232, dist: 0.98 },
-  { id: 'drc', name: 'DRC', angle: 188, dist: 0.98 },
-  { id: 'mozambique', name: 'MOZAMBIQUE', angle: 277, dist: 0.98 },
-  { id: 'zimbabwe', name: 'ZIMBABWE', angle: 264, dist: 0.9 },
-];
+// Re-exported from content/regions.ts (Session 4) in its native Title Case
+// form — components/home/RegionSummary.tsx uppercases non-hub names at
+// render time for the globe labels, matching how
+// app/company/where-we-work/page.tsx already does it, rather than storing
+// two casings of the same data.
+export { REGIONS } from './regions';
 
 export const CTA_BAND = {
   eyebrow: 'Get in touch',

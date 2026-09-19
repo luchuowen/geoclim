@@ -67,10 +67,13 @@ export default function SectorPage({ params }: { params: { slug: string } }) {
           <div className="sector-media-grid">
             <DataPanel seed={sector.panel.seed} caption={sector.panel.caption} status="ILLUS." coordLabel={sector.panel.coordLabel} />
             <figure className="sector-photo">
-              {/* eslint-disable-next-line @next/next/no-img-element -- placeholder slot;
-                  file does not exist yet, ships later via the NanoBanana image pack
-                  (docs/05, .claude/rules/content-discipline.md). */}
-              <img src={`/images/sector-${sector.slug}-01.jpg`} alt={sector.imageAlt} className="sector-photo-img" />
+              {/* Placeholder slot: the file at /images/sector-{slug}-01.jpg doesn't
+                  exist yet and ships later via the NanoBanana image pack (docs/05,
+                  .claude/rules/content-discipline.md). Rendered as a plain
+                  panel with an accessible label rather than an <img> pointing at
+                  a missing file, which would show a broken-image icon on every
+                  sector page — same "never a broken <img>" rule ImageSlot follows. */}
+              <div className="sector-photo-img" role="img" aria-label={sector.imageAlt} data-future-src={`/images/sector-${sector.slug}-01.jpg`} />
               <figcaption className="sector-photo-caption mono">{sector.imageAlt}</figcaption>
             </figure>
           </div>

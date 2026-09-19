@@ -1,9 +1,8 @@
 // Shared sector icon paths, keyed by `Sector.iconKey`. Ported verbatim from
 // reference/geoclim_spatial_register.html's per-sector <svg class="sector-icon">
 // / <svg class="dd-ic"> paths, so a sector's icon renders identically here
-// (SectorCard, SectorHeader) and in the nav mega-menu (components/nav/Nav.tsx,
-// which currently hard-codes its own copy pending a Session-2 import — see
-// that file's TODO). Do not edit components/nav/Nav.tsx from this session.
+// (SectorCard, SectorHeader) and in the nav mega-menu
+// (components/nav/Nav.tsx, which imports this map directly).
 
 export const SECTOR_ICON_PATHS: Record<string, string> = {
   agriculture: 'M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6',

@@ -52,6 +52,16 @@ a {
   color: inherit;
 }
 
+/* Sitewide visible focus ring for keyboard navigation — 1px accent outline,
+   2px offset, per .claude/rules/design-tokens.md. Every interactive
+   element in this build is a real <a>/<button>/form control, so this one
+   rule covers nav links, mega-menu items, buttons, pills, chips and form
+   fields without any component needing its own focus treatment. */
+:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 2px;
+}
+
 .eyebrow {
   font-family: var(--mono);
   font-size: 12px;
