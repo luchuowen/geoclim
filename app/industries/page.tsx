@@ -47,6 +47,8 @@ const SECTORS = [
     title: 'Insurance & Finance',
     body: 'Risk modelling, fraud detection, claims validation, and credit scoring.',
     icon: 'M3 12 L8 7 L13 13 L21 5 M21 5 L21 11',
+    href: '/industries/insurance-finance',
+    linkLabel: 'Explore Insurance & Finance →',
   },
 ];
 

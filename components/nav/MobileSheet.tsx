@@ -1,9 +1,11 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import BrandLogo from '@/components/brand/Logo';
 import { NAV_LINKS } from '@/content/site';
+import { INDUSTRY_LINKS } from '@/content/industries';
 
 interface MobileSheetProps {
   open: boolean;
@@ -13,9 +15,11 @@ interface MobileSheetProps {
 /** Slide-in mobile nav sheet. The artifact's mockup only specced desktop
  * nav (links hidden under 960px with no mobile menu drawn), so this is a
  * minimal, same-palette addition for usability rather than a deviation
- * from the approved design. */
+ * from the approved design. The Industries row expands into the same
+ * six industry links the desktop mega-dropdown offers. */
 export default function MobileSheet({ open, onClose }: MobileSheetProps) {
   const pathname = usePathname();
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   if (!open) return null;
 
   return (
@@ -33,6 +37,38 @@ export default function MobileSheet({ open, onClose }: MobileSheetProps) {
         </div>
         {NAV_LINKS.map((link) => {
           const isCurrent = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+
+          if (link.href === '/industries') {
+            return (
+              <div className="msheet-industries" key={link.href}>
+                <div className={`msheet-link msheet-ind-row${isCurrent ? ' current' : ''}`}>
+                  <Link href={link.href} onClick={onClose}>
+                    {link.label}
+                  </Link>
+                  <button
+                    className={`msheet-ind-toggle${industriesOpen ? ' open' : ''}`}
+                    aria-label="Toggle industries list"
+                    onClick={() => setIndustriesOpen((v) => !v)}
+                  >
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5}>
+                      <path d="M6 9l6 6 6-6" />
+                    </svg>
+                  </button>
+                </div>
+                {industriesOpen && (
+                  <div className="msheet-ind-list">
+                    {INDUSTRY_LINKS.map((ind) => (
+                      <Link href={ind.href} className="msheet-ind-link" key={ind.href} onClick={onClose}>
+                        <span className="msheet-ind-dot" style={{ background: ind.color }} />
+                        {ind.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          }
+
           return (
             <Link
               key={link.href}
