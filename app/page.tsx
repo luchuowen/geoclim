@@ -28,7 +28,7 @@ export default function HomePage() {
           </span>
         </div>
         <div className="home-hero-inner">
-          <div className="kicker" style={{ textAlign: 'center' }}>
+          <div className="kicker home-hero-kicker" style={{ textAlign: 'center' }}>
             Geospatial · Enterprise · AI — East, Central &amp; Southern Africa
           </div>
           <h1 className="h1-xl">

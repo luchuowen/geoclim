@@ -342,12 +342,13 @@ a {
   }
 }
 .triad-card h3 {
-  color: var(--teal);
-  background: #101226;
-  display: inline-block;
-  padding: 2px 8px;
-  font-size: 13.5px;
+  color: var(--ink-on-lav);
+  background: none;
+  display: block;
+  padding: 0;
+  font-size: 13px;
   font-weight: 800;
+  letter-spacing: 0.04em;
   margin-bottom: 14px;
 }
 .triad-card .frame {
@@ -1229,4 +1230,160 @@ a {
 .region-chip.hq {
   border-color: var(--teal);
   color: var(--teal);
+}
+
+/* ============================================================
+   MOBILE RESPONSIVENESS PASS
+   Desktop (>640px) is untouched by everything below except the
+   footer-accordion rules, which explicitly force the desktop
+   footer back to its original always-expanded appearance.
+   ============================================================ */
+
+/* safety net: nothing on the site intentionally scrolls sideways */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* ---------- footer: tap-to-expand accordion on mobile only ---------- */
+.sf-acc-toggle {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 14px;
+  cursor: default;
+}
+.sf-acc-toggle h4 {
+  margin-bottom: 0;
+}
+.sf-acc-chevron {
+  flex-shrink: 0;
+  color: var(--sub);
+  transition: transform 0.25s ease;
+  display: none;
+}
+.sf-acc-body {
+  overflow: hidden;
+}
+@media (max-width: 640px) {
+  .sf-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 0;
+  }
+  .sf-inner > div:first-child {
+    padding-bottom: 20px;
+  }
+  .sf-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sf-col.sf-accordion {
+    border-top: 1px solid var(--panel-line);
+    padding: 18px 0;
+  }
+  .sf-col.sf-accordion:last-child {
+    border-bottom: 1px solid var(--panel-line);
+  }
+  .sf-acc-toggle {
+    cursor: pointer;
+    justify-content: center;
+    position: relative;
+    padding: 0 26px;
+    margin-bottom: 0;
+  }
+  .sf-acc-chevron {
+    display: block;
+    position: absolute;
+    right: 4px;
+  }
+  .sf-acc-toggle[aria-expanded='true'] .sf-acc-chevron {
+    transform: rotate(180deg);
+  }
+  .sf-acc-body {
+    max-height: 0;
+    margin-top: 0;
+    transition: max-height 0.3s ease, margin-top 0.3s ease;
+  }
+  .sf-acc-body.open {
+    max-height: 400px;
+    margin-top: 16px;
+  }
+  .sf-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+/* ---------- general mobile centering & card adaptation ---------- */
+@media (max-width: 640px) {
+  .triad-head,
+  .triad-card {
+    text-align: center;
+  }
+  .glass {
+    text-align: center;
+  }
+  .glass-list {
+    justify-items: center;
+  }
+  .glass-list li {
+    justify-content: center;
+  }
+  .facts-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+  }
+  .facts-inner div {
+    flex: none;
+    padding: 0;
+    border-left: none;
+    text-align: center;
+  }
+  .info-card,
+  .case-card .cc-body,
+  .partner-mark,
+  .partner-detail {
+    text-align: center;
+  }
+  .partner-detail li {
+    justify-content: center;
+  }
+  .sector-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+  .ci-row {
+    justify-content: center;
+    text-align: center;
+  }
+  .form-panel h3,
+  .form-panel > p {
+    text-align: center;
+  }
+  .f-pills {
+    justify-content: center;
+  }
+  .rs-inner {
+    justify-content: center;
+    text-align: center;
+  }
+  .hero-carousel-slide {
+    text-align: center;
+  }
+  .hero-carousel-slide p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .home-hero-kicker {
+    display: none;
+  }
 }
