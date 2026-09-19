@@ -2175,3 +2175,243 @@ body {
   .util-mdp { padding: 0 var(--gutter) 70px; }
   .util-proof { padding: 0 var(--gutter) 70px; }
 }
+
+/* ================================================================
+   Industries — Agriculture (dedicated page). Scoped under .ag-page
+   so its palette tokens don't leak sitewide. Deliberately distinct
+   from the Utilities page: NDVI/satellite-tile hero instead of a
+   pipe network, green/gold/soil palette instead of blue/amber,
+   ticket-stub process cards instead of a vertical rail, and segments
+   organized by farming model instead of utility type. Sections
+   alternate dark/light using the same var(--lav) pair as Utilities.
+   ================================================================ */
+.ag-page {
+  --crop: #3f8a3a;
+  --crop-dim: rgba(63, 138, 58, 0.12);
+  --crop-br: #7ecb6f;
+  --stock: #a97a1f;
+  --stock-dim: rgba(169, 122, 31, 0.12);
+  --stock-br: #e0ad4e;
+  --biz: #935935;
+  --biz-dim: rgba(147, 89, 53, 0.12);
+  --biz-br: #c98a5c;
+}
+
+/* ---------- hero ---------- */
+.ag-hero-ndvi {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.ag-hero-inner { position: relative; z-index: 2; }
+.ag-page .page-hero h1 .stat { color: var(--crop-br); font-weight: 800; }
+.ag-hero-actions {
+  margin-top: 34px;
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- light section shell ---------- */
+.ag-light { background: var(--lav); color: var(--ink-on-lav); padding: 90px var(--gutter); }
+.ag-light .kicker { color: #2c7a20; }
+.ag-light .section-head p { color: #59543f; }
+
+/* ---------- invisible season: chip tiles, 3 across, never stack ---------- */
+.ag-season-strip {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+@media (max-width: 640px) { .ag-season-strip { gap: 7px; } }
+.ag-season-cell {
+  background: #fff;
+  border: 1px solid #d8d2ba;
+  border-radius: 12px;
+  padding: 20px 18px;
+  position: relative;
+  overflow: hidden;
+}
+@media (max-width: 640px) { .ag-season-cell { padding: 12px 10px; border-radius: 10px; } }
+.ag-season-cell::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.ag-season-cell.c::before { background: var(--crop); }
+.ag-season-cell.s::before { background: var(--stock); }
+.ag-season-cell.b::before { background: var(--biz); }
+.ag-season-cell .asc-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+@media (max-width: 640px) { .ag-season-cell .asc-label { font-size: 8px; margin-bottom: 6px; } }
+.ag-season-cell.c .asc-label { color: var(--crop); }
+.ag-season-cell.s .asc-label { color: var(--stock); }
+.ag-season-cell.b .asc-label { color: var(--biz); }
+.ag-season-cell .asc-stat {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: var(--ink-on-lav);
+}
+@media (max-width: 640px) { .ag-season-cell .asc-stat { font-size: 18px; margin-bottom: 6px; } }
+.ag-season-cell p { color: #59543f; font-size: 12px; line-height: 1.45; }
+@media (max-width: 640px) { .ag-season-cell p { font-size: 9.5px; line-height: 1.35; } }
+.ag-season-cell .asc-src { display: block; margin-top: 10px; font-size: 9.5px; color: #8f8a70; }
+@media (max-width: 640px) { .ag-season-cell .asc-src { margin-top: 6px; font-size: 7.5px; } }
+
+/* ---------- See it / Flag it / Act on it: ticket-stub cards (dark) ---------- */
+.ag-flow { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter) 110px; }
+.ag-stub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 8px; }
+@media (max-width: 860px) { .ag-stub-grid { grid-template-columns: 1fr; } }
+.ag-stub {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.ag-stub::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+.ag-stub.c::before { background: var(--crop-br); }
+.ag-stub.s::before { background: var(--stock-br); }
+.ag-stub.b::before { background: var(--biz-br); }
+.ag-stub-ic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px dashed var(--panel-line);
+  position: relative;
+}
+.ag-stub-ic .ghost {
+  position: absolute;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 800;
+  font-size: 34px;
+  opacity: 0.14;
+}
+.ag-stub.c .ghost { color: var(--crop-br); }
+.ag-stub.s .ghost { color: var(--stock-br); }
+.ag-stub.b .ghost { color: var(--biz-br); }
+.ag-stub-ic svg { width: 17px; height: 17px; fill: none; stroke-width: 1.8; position: relative; z-index: 1; }
+.ag-stub.c svg { stroke: var(--crop-br); }
+.ag-stub.s svg { stroke: var(--stock-br); }
+.ag-stub.b svg { stroke: var(--biz-br); }
+.ag-stub-body { padding: 16px 18px; }
+.ag-stub-body .as-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.ag-stub-body h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+.ag-stub-body .as-tools {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--teal);
+}
+.ag-stub-body p { margin-top: 5px; font-size: 12.5px; color: var(--sub); line-height: 1.55; }
+
+/* ---------- three ways of farming: header-band cards (light) ---------- */
+.ag-type-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .ag-type-grid { grid-template-columns: 1fr; } }
+.ag-type-card {
+  background: #fff;
+  border: 1px solid #ddd7bf;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ag-type-card:hover { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) {
+  .ag-type-card { transition: none; }
+  .ag-type-card:hover { transform: none; }
+}
+.ag-tc-head { padding: 22px 24px 20px; }
+.ag-tc-head h3 { font-family: 'Inter', sans-serif; color: #fff; font-size: 19px; font-weight: 800; }
+.ag-tc-head .ag-tc-tag {
+  margin-top: 4px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  display: block;
+}
+.ag-type-card.c .ag-tc-head { background: linear-gradient(135deg, var(--crop), #1e4a1c); }
+.ag-type-card.s .ag-tc-head { background: linear-gradient(135deg, var(--stock), #4a3510); }
+.ag-type-card.b .ag-tc-head { background: linear-gradient(135deg, var(--biz), #3d2415); }
+.ag-tc-body { padding: 18px 24px 22px; }
+.ag-tc-item {
+  display: flex;
+  gap: 9px;
+  align-items: flex-start;
+  padding: 9px 0;
+  border-top: 1px solid #ece7d4;
+  font-size: 12.5px;
+  color: #4d4a3a;
+  line-height: 1.5;
+}
+.ag-tc-item:first-child { border-top: none; }
+.ag-tc-item .ag-tc-dot { width: 5px; height: 5px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.ag-type-card.c .ag-tc-dot { background: var(--crop); }
+.ag-type-card.s .ag-tc-dot { background: var(--stock); }
+.ag-type-card.b .ag-tc-dot { background: var(--biz); }
+
+/* ---------- proof: centered content-width panel with sparkline (dark) ---------- */
+.ag-proof { padding: 0 var(--gutter) 110px; max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; }
+.ag-proof-card {
+  max-width: 620px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(126, 203, 111, 0.09), rgba(110, 231, 199, 0.05));
+  border: 1px solid var(--panel-line);
+  border-radius: 20px;
+  padding: 44px 40px;
+}
+.ag-proof-spark { position: absolute; right: -10px; bottom: -10px; width: 220px; height: 100px; opacity: 0.5; }
+.ag-proof-card .kicker { margin-bottom: 14px; position: relative; z-index: 1; }
+.ag-proof-result {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 46px;
+  font-weight: 800;
+  color: var(--crop-br);
+  line-height: 1;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.ag-proof-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  max-width: 34ch;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+.ag-proof-card p {
+  color: var(--sub);
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 46ch;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+}
+.ag-proof-card a { color: var(--teal); font-weight: 700; font-size: 13px; position: relative; z-index: 1; }
+@media (max-width: 640px) { .ag-proof-card { padding: 32px 26px; } }

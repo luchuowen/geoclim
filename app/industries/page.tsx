@@ -19,6 +19,8 @@ const SECTORS = [
     title: 'Agriculture',
     body: 'Climate analytics, crop monitoring, and early warning — satellite, UAV, and IoT-enabled.',
     icon: 'circle',
+    href: '/industries/agriculture',
+    linkLabel: 'Explore Agriculture →',
   },
   {
     title: 'Transportation',
