@@ -80,3 +80,26 @@ Phase 2 is gated on Owen's review.
   The pre-factory `CLAUDE.md` (200 lines) is preserved verbatim at
   `.factory/history/CLAUDE.md.pre-factory.md` for anything this file or the
   rules under `.claude/rules/` don't yet cover.
+- 2026-09-19 — **Session 7 (`feat/gcp-firestore`)**: added Firestore, scoped
+  to contact-form lead capture only. `lib/firestore.ts` (server-only,
+  Application Default Credentials, no committed service-account JSON) now
+  exposes `saveContactSubmission()`, and `app/api/contact/route.ts` calls it
+  on validated submissions, writing to a `contactSubmissions` collection and
+  returning a generic error to the client on any Firestore failure (real
+  error logged server-side only). Site content (sectors/platform/proof/
+  regions/home/company) stays fully static by design — this was never a
+  phase boundary to lift, Firestore earns its place only for the one
+  genuinely dynamic thing on the site. Hosting target is Firebase App
+  Hosting (`apphosting.yaml`), chosen because it's GCP-native and built for
+  Next.js SSR + Firestore, consistent with the existing `no-static-export`
+  decision. Added `firestore.rules` (deny all client read/write — this is
+  server-only lead capture) and `firestore.indexes.json`. The
+  `no-firestore-yet` gate in `.factory/manifest.json` was narrowed, not
+  removed: it still blocks Firestore/GCP SDK imports under `content/**`,
+  `components/**`, and `app/**/page.tsx` (permanent constraint), and now
+  allows them under `lib/firestore.ts` and `app/api/**`. Added
+  `firebase-admin@13.10.0` (pinned exact; the 14.x line requires Node ≥22,
+  and this repo targets Node 18+) to `package.json` — a `critical_paths`
+  file, diff kept to that one line. No GCP project was created, no APIs
+  enabled, nothing deployed from this session; a human does that next from
+  the Firebase/GCP console.

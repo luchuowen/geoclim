@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { saveContactSubmission } from '@/lib/firestore';
 
 const SEGMENTS = ['government', 'enterprise', 'partnership', 'general'] as const;
 type Segment = (typeof SEGMENTS)[number];
@@ -17,10 +18,10 @@ function isSegment(value: unknown): value is Segment {
   return typeof value === 'string' && (SEGMENTS as readonly string[]).includes(value);
 }
 
-/** Validates and acknowledges a `/contact` form submission. Does not send
- * an email or write to Firestore/any external service — this repo is
- * gated `no-firestore-yet` this phase (docs/01, content/types.ts header),
- * and a later integration session wires the real handler. */
+/** Validates a `/contact` form submission and writes it to Firestore
+ * (`contactSubmissions` collection, via lib/firestore.ts) as a lead for
+ * the site owner to read from the Firebase console. Does not send email —
+ * that remains a future integration. */
 export async function POST(request: Request) {
   let body: unknown;
   try {
@@ -57,6 +58,23 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, errors }, { status: 400 });
   }
 
-  // TODO(phase-2): wire to real form handler / email service
+  try {
+    await saveContactSubmission({
+      segment: segment as Segment,
+      name: (name as string).trim(),
+      organisation: typeof organisation === 'string' && organisation.trim() ? organisation.trim() : undefined,
+      email: (email as string).trim(),
+      message: (message as string).trim(),
+    });
+  } catch (error) {
+    // Log server-side only — never leak stack traces, project IDs, or
+    // other internal detail to the client.
+    console.error('[contact] Failed to save submission to Firestore:', error);
+    return NextResponse.json(
+      { ok: false, errors: { form: 'Something went wrong. Please try again.' } },
+      { status: 500 },
+    );
+  }
+
   return NextResponse.json({ ok: true }, { status: 200 });
 }

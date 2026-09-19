@@ -17,9 +17,9 @@
     {
       "name": "no-firestore-yet",
       "pattern": "firebase-admin|firebase/firestore|@google-cloud/firestore",
-      "paths": ["app/**", "components/**", "content/**", "lib/**"],
-      "exclude": [],
-      "description": "Phase 1 touches no Firestore SDK or GCP credentials (docs/01). Content stays in content/*.ts typed arrays."
+      "paths": ["app/**/page.tsx", "components/**", "content/**", "lib/**"],
+      "exclude": ["lib/firestore.ts", "app/api/**"],
+      "description": "Site content (sectors/platform/proof/regions/home/company) stays static and never touches the Firestore/GCP SDKs — permanent, not a phase boundary (docs/01, content/types.ts header). Firestore is allowed only in lib/firestore.ts and app/api/** (Session 7), for contact-form lead capture."
     },
     {
       "name": "svg-devices-stay-pure",

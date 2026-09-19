@@ -1,0 +1,25 @@
+# Firebase App Hosting config for this Next.js 14 App Router app.
+# https://firebase.google.com/docs/app-hosting/configure
+#
+# App Hosting builds and runs the app on Cloud Run and supplies the
+# runtime service account's Application Default Credentials automatically
+# — no key file, no credential env var needed for lib/firestore.ts.
+
+runConfig:
+  # This is a marketing site with one lightweight API route; a single
+  # small instance is enough, and it's fine to scale to zero when idle.
+  minInstances: 0
+  maxInstances: 2
+  concurrency: 80
+  cpu: 1
+  memoryMiB: 512
+
+# Env vars / secrets available at BUILD and/or RUNTIME.
+# Add future secrets (e.g. an email-service API key for the contact form)
+# as Secret Manager bindings here — never inline a real value in this file:
+#
+# env:
+#   - variable: EMAIL_SERVICE_API_KEY
+#     secret: email-service-api-key
+#     availability:
+#       - RUNTIME
