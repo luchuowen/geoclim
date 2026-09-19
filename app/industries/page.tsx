@@ -26,6 +26,8 @@ const SECTORS = [
     title: 'Transportation',
     body: 'Roads, rail, and airports. Intelligent mobility, traffic management, logistics optimization.',
     icon: 'M3 17 L9 11 L13 15 L21 7',
+    href: '/industries/transportation',
+    linkLabel: 'Explore Transportation →',
   },
   {
     title: 'Natural Resources',
