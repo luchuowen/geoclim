@@ -86,7 +86,7 @@ export default function WorkPage() {
         <div className="kicker">How we work</div>
         <h2>Every engagement follows the same arc</h2>
       </section>
-      <div className="grid-cards">
+      <div className="grid-cards cards-3">
         {STEPS.map((s) => (
           <div className="info-card" key={s.num}>
             <div className="ic-num">{s.num}</div>

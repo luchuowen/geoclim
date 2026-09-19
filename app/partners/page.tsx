@@ -72,7 +72,7 @@ export default function PartnersPage() {
         <div className="kicker">The wider ecosystem</div>
         <h2>Public sector, private sector, research</h2>
       </section>
-      <div className="grid-cards">
+      <div className="grid-cards cards-3">
         <div className="info-card">
           <h3>Public Sector</h3>
           <p>Governments, regulators, and utilities across our ten operating markets.</p>

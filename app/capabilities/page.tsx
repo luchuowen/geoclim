@@ -57,7 +57,7 @@ export default function CapabilitiesPage() {
 
       <section className="triad">
         <div className="triad-head">Eight focused solutions, built to be combined rather than bought one at a time.</div>
-        <div className="triad-grid" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
+        <div className="triad-grid triad-grid-4">
           {SOLUTIONS.map((s) => (
             <div className="triad-card" key={s.title}>
               <h3>{s.title}</h3>
