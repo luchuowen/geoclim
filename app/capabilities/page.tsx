@@ -139,52 +139,89 @@ export default function CapabilitiesPage() {
         <p>Two named technology partnerships — not a generic &quot;AI-powered&quot; claim.</p>
       </section>
 
-      <div className="partner-block">
-        <div className="partner-mark">
-          <div>
-            <div className="pm-word">Penta-B</div>
-            <div className="pm-tag">Geo-Enterprise Platforms</div>
+      <div className="partner-pair">
+        <div className="partner-card">
+          <div className="pc-head pc-penta">
+            <div className="pc-name">Penta-B</div>
+            <div className="pc-tag">Geo-Enterprise Platforms</div>
           </div>
-          <p className="pm-desc">Advanced geo-enabled enterprise ecosystem for secure, scalable, multilingual GIS applications.</p>
+          <div className="pc-body">
+            <p className="pc-desc">
+              Advanced geo-enabled enterprise ecosystem for secure, scalable, multilingual GIS applications.
+            </p>
+            <div className="pc-caps">
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">Maps &amp; Apps</div>
+                  <div className="pc-cap-sub">Multi-tenant enterprise GIS</div>
+                </div>
+              </div>
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">PBPM</div>
+                  <div className="pc-cap-sub">Workflow automation</div>
+                </div>
+              </div>
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">SMART GIS</div>
+                  <div className="pc-cap-sub">3D + IoT intelligence</div>
+                </div>
+              </div>
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">PSIM</div>
+                  <div className="pc-cap-sub">Incident management</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="partner-detail">
-          <h3>Included platforms</h3>
-          <ul>
-            <li>
-              <b>Maps &amp; Apps (MNA)</b> — multi-tenant enterprise GIS application platform
-            </li>
-            <li>
-              <b>PBPM</b> — geo-enabled business process and workflow automation suite
-            </li>
-            <li>
-              <b>SMART &amp; Real-Time GIS</b> — real-time, 3D, and IoT spatial intelligence
-            </li>
-            <li>
-              <b>PSIM</b> — geo-enabled incident and emergency management platform
-            </li>
-          </ul>
-        </div>
-      </div>
 
-      <div className="partner-block">
-        <div className="partner-mark">
-          <div>
-            <div className="pm-word">RockEye</div>
-            <div className="pm-tag">Intelligent ERP Platform</div>
+        <div className="partner-card">
+          <div className="pc-head pc-rockeye">
+            <div className="pc-name">RockEye</div>
+            <div className="pc-tag">Intelligent ERP Platform</div>
           </div>
-          <p className="pm-desc">GIS-enabled enterprise resource planning, combining operational systems with spatial intelligence.</p>
-        </div>
-        <div className="partner-detail">
-          <h3>Capabilities</h3>
-          <ul>
-            <li>AI-powered ERP analytics</li>
-            <li>Real-time operational dashboards</li>
-            <li>Workflow automation &amp; RPA</li>
-            <li>Asset &amp; inventory intelligence</li>
-            <li>Supply chain &amp; logistics optimization</li>
-            <li>Predictive maintenance</li>
-            <li>Multi-sector ERP suites — Oil &amp; Gas, Manufacturing, Supply Chain, Enterprise Operations</li>
-          </ul>
+          <div className="pc-body">
+            <p className="pc-desc">
+              GIS-enabled enterprise resource planning, combining operational systems with spatial intelligence.
+            </p>
+            <div className="pc-caps">
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">AI Analytics</div>
+                  <div className="pc-cap-sub">Predictive ERP insights</div>
+                </div>
+              </div>
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">Live Dashboards</div>
+                  <div className="pc-cap-sub">Real-time visibility</div>
+                </div>
+              </div>
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">Automation</div>
+                  <div className="pc-cap-sub">RPA across workflows</div>
+                </div>
+              </div>
+              <div className="pc-cap">
+                <span className="pc-dot" aria-hidden="true" />
+                <div>
+                  <div className="pc-cap-label">Asset &amp; Supply</div>
+                  <div className="pc-cap-sub">Inventory + logistics</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 

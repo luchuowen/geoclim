@@ -1310,84 +1310,102 @@ a {
   }
 }
 
-/* partner deep-dive blocks */
-.partner-block {
+/* partner cards — colored header band (Option B) + dotted capability
+   grid (Option A), fused per client approval. Grid's default
+   align-items: stretch keeps both cards the same height, driven by
+   whichever has more content, so nothing is ever clipped. */
+.partner-pair {
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 var(--gutter) 90px;
   display: grid;
-  gap: 30px;
+  gap: 22px;
   grid-template-columns: 1fr;
 }
-@media (min-width: 900px) {
-  .partner-block {
-    grid-template-columns: 0.85fr 1.15fr;
+@media (min-width: 860px) {
+  .partner-pair {
+    grid-template-columns: 1fr 1fr;
   }
 }
-.partner-mark {
+.partner-card {
   background: var(--panel);
   border: 1px solid var(--panel-line);
-  border-radius: 12px;
-  padding: 36px;
+  border-radius: 16px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 260px;
 }
-.partner-mark .pm-word {
+.pc-head {
+  padding: 26px 30px 22px;
+}
+.pc-head.pc-penta {
+  background: linear-gradient(135deg, #0e8f6f, #1a3d33);
+}
+.pc-head.pc-rockeye {
+  background: linear-gradient(135deg, #3a3570, #1a1833);
+}
+.pc-head .pc-name {
   font-family: 'Inter', sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
+  color: #fff;
 }
-.partner-mark .pm-tag {
+.pc-head .pc-tag {
+  margin-top: 5px;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px;
-  color: var(--teal);
-  text-transform: uppercase;
+  font-size: 10.5px;
+  font-weight: 600;
   letter-spacing: 0.08em;
-  margin-top: 8px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
 }
-.partner-mark .pm-desc {
-  margin-top: 20px;
+.pc-body {
+  padding: 24px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.pc-desc {
   font-size: 13.5px;
   color: var(--sub);
   line-height: 1.6;
 }
-.partner-detail {
-  background: var(--panel);
-  border: 1px solid var(--panel-line);
-  border-radius: 12px;
-  padding: 36px;
-}
-.partner-detail h3 {
-  font-family: 'Inter', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin-bottom: 16px;
-}
-.partner-detail ul {
+.pc-caps {
+  margin-top: auto;
   display: grid;
-  gap: 12px;
   grid-template-columns: 1fr 1fr;
+  gap: 16px 18px;
+  padding-top: 22px;
+  border-top: 1px solid var(--panel-line);
 }
-@media (max-width: 600px) {
-  .partner-detail ul {
+@media (max-width: 480px) {
+  .pc-caps {
     grid-template-columns: 1fr;
   }
 }
-.partner-detail li {
-  list-style: none;
-  font-size: 13.5px;
-  color: #c7cedb;
+.pc-cap {
   display: flex;
-  gap: 8px;
+  align-items: flex-start;
+  gap: 9px;
 }
-.partner-detail li::before {
-  content: '—';
-  color: var(--teal);
+.pc-cap .pc-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+  margin-top: 7px;
   flex-shrink: 0;
+}
+.pc-cap-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+.pc-cap-sub {
+  font-size: 12px;
+  color: #7d8199;
+  margin-top: 2px;
 }
 
 /* case study cards */
@@ -1830,11 +1848,11 @@ body {
   }
   .info-card,
   .case-card .cc-body,
-  .partner-mark,
-  .partner-detail {
+  .pc-head,
+  .pc-body {
     text-align: center;
   }
-  .partner-detail li {
+  .pc-cap {
     justify-content: center;
   }
   .sector-card {
