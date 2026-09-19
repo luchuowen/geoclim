@@ -12,6 +12,8 @@ const SECTORS = [
     title: 'Utilities',
     body: 'Water, electric, gas, and petroleum. Smart metering, predictive asset management, and leakage reduction.',
     icon: 'M12 2 L12 22 M4 8 L20 8 M4 16 L20 16',
+    href: '/industries/utilities',
+    linkLabel: 'Explore Utilities →',
   },
   {
     title: 'Agriculture',
@@ -92,8 +94,8 @@ export default function IndustriesPage() {
             <div>
               <h3>{s.title}</h3>
               <p>{s.body}</p>
-              <Link className="sc-links" href="/work">
-                See related work →
+              <Link className="sc-links" href={s.href ?? '/work'}>
+                {s.linkLabel ?? 'See related work →'}
               </Link>
             </div>
           </div>
