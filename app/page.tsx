@@ -53,21 +53,25 @@ export default function HomePage() {
 
       <div className="facts">
         <div className="facts-inner">
-          <div>
+          <div className="fact-item">
             <b>10</b>
+            <div className="fact-tick" aria-hidden="true" />
             <span>Countries served</span>
           </div>
-          <div>
+          <div className="fact-item">
             <b>2</b>
-            <span>Named technology partnerships</span>
+            <div className="fact-tick" aria-hidden="true" />
+            <span>Technology partners</span>
           </div>
-          <div>
+          <div className="fact-item">
             <b>6</b>
-            <span>Industries with dedicated solutions</span>
+            <div className="fact-tick" aria-hidden="true" />
+            <span>Industries served</span>
           </div>
-          <div>
+          <div className="fact-item">
             <b>4</b>
-            <span>Core service lines</span>
+            <div className="fact-tick" aria-hidden="true" />
+            <span>Service lines</span>
           </div>
         </div>
       </div>

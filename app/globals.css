@@ -795,40 +795,52 @@ a {
 }
 
 .facts {
-  background: #0e1018;
+  background: radial-gradient(120% 180% at 50% -30%, rgba(110, 231, 199, 0.08), transparent 55%), #0e1018;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .facts-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 34px var(--gutter);
+  padding: 46px var(--gutter);
   display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 76px;
   flex-wrap: wrap;
 }
-.facts-inner div {
-  flex: 1 1 180px;
-  padding: 0 22px;
-  border-left: 1px solid var(--line);
+.fact-item {
+  text-align: center;
 }
-.facts-inner div:first-child {
-  border-left: none;
-  padding-left: 0;
-}
-.facts-inner b {
+.fact-item b {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: 28px;
-  font-weight: 800;
+  font-size: 34px;
+  font-weight: 900;
   letter-spacing: -0.02em;
-  color: #fff;
+  line-height: 1;
+  white-space: nowrap;
+  background: linear-gradient(180deg, #ffffff 0%, #bff2df 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.facts-inner span {
-  font-size: 12px;
-  color: var(--sub);
+.fact-tick {
+  width: 30px;
+  height: 3px;
+  border-radius: 2px;
+  margin: 14px auto 13px;
+  background: linear-gradient(90deg, transparent, #6ee7c7, transparent);
+}
+.fact-item span {
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 700;
+  color: var(--sub);
+  white-space: nowrap;
 }
 
 .section-head {
@@ -1676,11 +1688,11 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 28px 16px;
   }
-  .facts-inner div {
-    flex: none;
-    padding: 0;
-    border-left: none;
+  .fact-item {
     text-align: center;
+  }
+  .fact-item span {
+    white-space: normal;
   }
   .info-card,
   .case-card .cc-body,
