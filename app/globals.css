@@ -1147,6 +1147,7 @@ a {
 }
 .case-card .cc-body {
   padding: 24px 24px 28px;
+  text-align: center;
 }
 .case-card .cc-tag {
   font-family: 'IBM Plex Mono', monospace;
