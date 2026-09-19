@@ -227,6 +227,9 @@ a {
   font-size: 12px;
   color: #5e6178;
 }
+.sf-bottom a:hover {
+  color: var(--teal);
+}
 
 /* ---------- component library ---------- */
 .kicker {
