@@ -33,6 +33,8 @@ const SECTORS = [
     title: 'Natural Resources',
     body: 'Environmental monitoring, mining exploration, and land-use optimization.',
     icon: 'M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z',
+    href: '/industries/natural-resources',
+    linkLabel: 'Explore Natural Resources →',
   },
   {
     title: 'Retail & FMCG',
