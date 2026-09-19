@@ -1027,7 +1027,7 @@ a {
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: #fff;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 .page-hero h1 .accent {
   font-style: italic;
@@ -1088,7 +1088,7 @@ a {
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #fff;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 .h1-xl .accent {
   font-style: italic;
