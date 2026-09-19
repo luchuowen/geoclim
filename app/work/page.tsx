@@ -35,49 +35,68 @@ export default function WorkPage() {
         </div>
       </header>
 
-      <div className="case-grid">
-        <Reveal className="case-card">
-          <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-agriculture.jpg)' }} aria-hidden="true" />
-          <div className="cc-body">
-            <div className="cc-tag">Agriculture · Kenya</div>
-            <h3>Precision agriculture for a commercial agribusiness client</h3>
-            <div className="cc-result">30% yield increase</div>
-            <p className="cc-note">Real-time monitoring applied across the growing season. Methodology and timeframe available on request.</p>
-          </div>
-        </Reveal>
-        <Reveal className="case-card" delay="0.1s">
-          <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-utilities.jpg)' }} aria-hidden="true" />
-          <div className="cc-body">
-            <div className="cc-tag">Utilities · Uganda</div>
-            <h3>Leak reduction for a regional water utility</h3>
-            <div className="cc-result">25% less water loss</div>
-            <p className="cc-note">Smart GIS monitoring identified network losses ahead of manual inspection cycles.</p>
-          </div>
-        </Reveal>
-        <Reveal className="case-card" delay="0.2s">
-          <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-transport.jpg)' }} aria-hidden="true" />
-          <div className="cc-body">
-            <div className="cc-tag">Transportation · Tanzania</div>
-            <h3>Traffic planning across pilot corridors</h3>
-            <div className="cc-result">Reduced congestion</div>
-            <p className="cc-note">AI-driven insight into pilot corridors; full metrics available under NDA.</p>
-          </div>
-        </Reveal>
-      </div>
-
-      <section className="section-head">
-        <div className="kicker">How we work</div>
-        <h2>Every engagement follows the same arc</h2>
+      <section className="work-cases">
+        <div className="work-cases-grid">
+          <Reveal className="work-case-card ag">
+            <div className="wc-visual" style={{ backgroundImage: 'url(/images/card-agriculture.jpg)' }} aria-hidden="true" />
+            <div className="wc-body">
+              <div className="wc-tag">Agriculture · Kenya</div>
+              <h3>Precision agriculture for a commercial agribusiness client</h3>
+              <div className="wc-result">30% yield increase</div>
+              <p className="wc-note">Real-time monitoring applied across the growing season. Methodology and timeframe available on request.</p>
+            </div>
+          </Reveal>
+          <Reveal className="work-case-card ut" delay="0.1s">
+            <div className="wc-visual" style={{ backgroundImage: 'url(/images/card-utilities.jpg)' }} aria-hidden="true" />
+            <div className="wc-body">
+              <div className="wc-tag">Utilities · Uganda</div>
+              <h3>Leak reduction for a regional water utility</h3>
+              <div className="wc-result">25% less water loss</div>
+              <p className="wc-note">Smart GIS monitoring identified network losses ahead of manual inspection cycles.</p>
+            </div>
+          </Reveal>
+          <Reveal className="work-case-card tr" delay="0.2s">
+            <div className="wc-visual" style={{ backgroundImage: 'url(/images/card-transport.jpg)' }} aria-hidden="true" />
+            <div className="wc-body">
+              <div className="wc-tag">Transportation · Tanzania</div>
+              <h3>Traffic planning across pilot corridors</h3>
+              <div className="wc-result">Reduced congestion</div>
+              <p className="wc-note">AI-driven insight into pilot corridors; full metrics available under NDA.</p>
+            </div>
+          </Reveal>
+        </div>
       </section>
-      <div className="grid-cards cards-3">
-        {STEPS.map((s) => (
-          <div className="info-card" key={s.num}>
-            <div className="ic-num">{s.num}</div>
-            <h3>{s.title}</h3>
-            <p>{s.body}</p>
+
+      <section className="work-arc">
+        <div className="section-head">
+          <div className="kicker">How we work</div>
+          <h2>Every engagement follows the same arc</h2>
+        </div>
+        <div className="work-arc-outer">
+          <svg className="work-arc-svg" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
+            <path
+              d="M120,60 C 400,0 800,0 1080,60"
+              fill="none"
+              stroke="#1f7a52"
+              strokeWidth={2}
+              strokeDasharray="2 8"
+              strokeLinecap="round"
+              opacity={0.55}
+            />
+          </svg>
+          <div className="work-arc-grid">
+            {STEPS.map((s) => (
+              <div className="work-arc-step" key={s.num}>
+                <div className="work-arc-node-row">
+                  <div className="work-arc-node">{s.num}</div>
+                </div>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      </section>
     </>
   );
 }
