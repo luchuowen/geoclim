@@ -3,10 +3,37 @@ import Nav from '../components/nav/Nav';
 import Footer from '../components/footer/Footer';
 import './globals.css';
 
+const SITE_URL = 'https://geoclim.navac.co.ke';
+const SITE_TITLE = 'GeoClim East Africa';
+const SITE_DESCRIPTION =
+  'Geospatial intelligence, enterprise systems, and AI for East, Central & Southern Africa. Intelligent technologies that bridge data to action.';
+
 export const metadata: Metadata = {
-  title: 'GeoClim East Africa',
-  description:
-    'Geospatial intelligence, enterprise systems, and AI for East, Central & Southern Africa. Intelligent technologies that bridge data to action.',
+  metadataBase: new URL(SITE_URL),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_TITLE,
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 675,
+        alt: 'GeoClim East Africa — GIS + ERP + AI, unified for East Africa',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: ['/og-image.jpg'],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
