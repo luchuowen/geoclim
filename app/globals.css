@@ -372,8 +372,8 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(64% 62% at 50% 42%, rgba(5, 8, 13, 0.6) 0%, rgba(5, 8, 13, 0.22) 60%, rgba(5, 8, 13, 0) 100%),
-    linear-gradient(180deg, rgba(5, 8, 13, 0.2) 0%, rgba(5, 8, 13, 0.06) 38%, rgba(5, 8, 13, 0.46) 100%);
+    radial-gradient(72% 74% at 50% 40%, rgba(4, 6, 10, 0.74) 0%, rgba(4, 6, 10, 0.5) 55%, rgba(4, 6, 10, 0.1) 100%),
+    linear-gradient(180deg, rgba(4, 6, 10, 0.38) 0%, rgba(4, 6, 10, 0.22) 32%, rgba(4, 6, 10, 0.58) 100%);
 }
 .has-photo .hero-tex {
   opacity: 0.22;
@@ -1030,12 +1030,12 @@ a {
 }
 .has-photo .page-hero p,
 .has-photo .home-hero-sub {
-  color: #e8eaf3;
-  text-shadow: 0 1px 3px rgba(4, 6, 10, 0.65), 0 6px 18px rgba(4, 6, 10, 0.4);
+  color: #f2f3f9;
+  text-shadow: 0 1px 4px rgba(4, 6, 10, 0.85), 0 8px 22px rgba(4, 6, 10, 0.6);
 }
 .has-photo .breadcrumb {
-  color: #d3d6e6;
-  text-shadow: 0 1px 6px rgba(4, 6, 10, 0.6);
+  color: #eceef7;
+  text-shadow: 0 1px 6px rgba(4, 6, 10, 0.75), 0 4px 14px rgba(4, 6, 10, 0.5);
 }
 
 /* home hero (full, badges) */
