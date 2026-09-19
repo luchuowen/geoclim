@@ -79,20 +79,7 @@ export default function HomePage() {
         <div className="triad-grid">
           <div className="triad-card">
             <h3>SPATIAL INTELLIGENCE</h3>
-            <div className="frame">
-              <svg viewBox="0 0 300 230" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                <rect width="300" height="230" fill="#233126" />
-                <polygon
-                  points="150,10 210,40 230,110 200,180 150,220 100,190 70,120 90,50"
-                  fill="#3c5c3e"
-                  stroke="#6ee7c7"
-                  strokeWidth={1}
-                />
-                <circle cx="150" cy="120" r="3" fill="#6ee7c7" />
-                <circle cx="120" cy="90" r="2" fill="#6ee7c7" />
-                <circle cx="175" cy="150" r="2" fill="#6ee7c7" />
-              </svg>
-            </div>
+            <div className="frame frame-photo" style={{ backgroundImage: 'url(/images/triad-spatial-intelligence.jpg)' }} />
             <p className="cap">GIS, satellite, UAV &amp; IoT</p>
             <p className="sub">
               Penta-B&apos;s Maps &amp; Apps and SMART Real-Time GIS platforms, plus satellite, drone, and sensor
@@ -101,20 +88,7 @@ export default function HomePage() {
           </div>
           <div className="triad-card">
             <h3>ENTERPRISE INTEGRATION</h3>
-            <div className="frame">
-              <svg viewBox="0 0 300 230" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                <rect width="300" height="230" fill="#14161c" />
-                <g fill="#3a3f52">
-                  <rect x="30" y="30" width="60" height="34" />
-                  <rect x="100" y="30" width="60" height="34" />
-                  <rect x="170" y="30" width="60" height="34" />
-                  <rect x="30" y="74" width="60" height="34" />
-                  <rect x="100" y="74" width="60" height="34" />
-                  <rect x="170" y="74" width="60" height="34" />
-                </g>
-                <rect x="95" y="65" width="70" height="48" fill="none" stroke="#6ee7c7" strokeWidth={1.4} strokeDasharray="3 3" />
-              </svg>
-            </div>
+            <div className="frame frame-photo" style={{ backgroundImage: 'url(/images/triad-enterprise-integration.jpg)' }} />
             <p className="cap">RockEye ERP + PBPM workflows</p>
             <p className="sub">
               Asset intelligence, predictive maintenance, supply chain optimization, and workflow automation
@@ -123,22 +97,7 @@ export default function HomePage() {
           </div>
           <div className="triad-card">
             <h3>AI &amp; AUTOMATION</h3>
-            <div className="frame">
-              <svg viewBox="0 0 300 230" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-                <rect width="300" height="230" fill="#fff" />
-                <g stroke="#191733" strokeWidth={0.6} opacity={0.25}>
-                  <line x1="0" y1="60" x2="300" y2="60" />
-                  <line x1="0" y1="120" x2="300" y2="120" />
-                  <line x1="0" y1="180" x2="300" y2="180" />
-                </g>
-                <polyline
-                  points="10,150 40,130 70,160 100,110 130,140 160,90 190,120 220,70 250,100 280,60"
-                  fill="none"
-                  stroke="#2f7d6b"
-                  strokeWidth={2.4}
-                />
-              </svg>
-            </div>
+            <div className="frame frame-photo" style={{ backgroundImage: 'url(/images/triad-ai-automation.jpg)' }} />
             <p className="cap">Predictive analytics &amp; RPA</p>
             <p className="sub">AI-powered ERP analytics and robotic process automation applied to real-time dashboards, not a bolt-on chatbot.</p>
           </div>
