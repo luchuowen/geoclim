@@ -22,7 +22,7 @@ export const FOOTER_COMPANY_LINKS = [
 
 export const CONTACT = {
   city: 'Nairobi, Kenya',
-  phone: '+254 0768 583 362',
+  phone: '+254 768 583 362',
   email: 'info@geoclimea.org',
   hours: 'Mon–Fri, 8am–5pm EAT',
 } as const;
