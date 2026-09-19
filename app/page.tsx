@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import SharedDefs, { HeroTexture } from '@/components/ui/SharedDefs';
+import SharedDefs, { HeroTexture, HeroPhoto } from '@/components/ui/SharedDefs';
 import HeroCarousel from '@/components/home/HeroCarousel';
 
 export default function HomePage() {
@@ -7,7 +7,8 @@ export default function HomePage() {
     <>
       <SharedDefs />
 
-      <header className="home-hero">
+      <header className="home-hero has-photo">
+        <HeroPhoto src="/images/hero-home.jpg" />
         <HeroTexture />
         <div className="badges">
           <span className="badge" style={{ top: '10%', left: '5%' }}>

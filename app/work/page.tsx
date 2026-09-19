@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import SharedDefs, { HeroTexture } from '@/components/ui/SharedDefs';
+import SharedDefs, { HeroTexture, HeroPhoto } from '@/components/ui/SharedDefs';
 
 export const metadata: Metadata = {
   title: 'Work — GeoClim East Africa',
@@ -16,7 +16,8 @@ export default function WorkPage() {
   return (
     <>
       <SharedDefs />
-      <header className="page-hero">
+      <header className="page-hero has-photo">
+        <HeroPhoto src="/images/hero-work.jpg" />
         <HeroTexture />
         <div className="page-hero-inner">
           <div className="breadcrumb">

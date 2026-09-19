@@ -33,3 +33,10 @@ export function HeroTexture() {
     </div>
   );
 }
+
+/** Photographic hero background — rendered before <HeroTexture /> so the
+ * glow/noise layer sits on top and blends with it (see .has-photo rules in
+ * globals.css). Pass the /images/*.jpg path. */
+export function HeroPhoto({ src }: { src: string }) {
+  return <div className="hero-photo" style={{ backgroundImage: `url(${src})` }} aria-hidden="true" />;
+}
