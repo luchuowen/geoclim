@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import SharedDefs, { HeroTexture, HeroPhoto, HeroScan } from '@/components/ui/SharedDefs';
-import HeroCarousel from '@/components/home/HeroCarousel';
 import Reveal from '@/components/home/Reveal';
 
 export default function HomePage() {
@@ -12,24 +11,6 @@ export default function HomePage() {
         <HeroPhoto src="/images/hero-home.jpg" />
         <HeroScan />
         <HeroTexture />
-        <div className="badges">
-          <span className="badge" style={{ top: '10%', left: '5%' }}>
-            <i />
-            Enterprise GIS
-          </span>
-          <span className="badge" style={{ top: '22%', right: '4%' }}>
-            <i />
-            RockEye ERP
-          </span>
-          <span className="badge" style={{ bottom: '14%', left: '9%' }}>
-            <i />
-            Penta-B Platforms
-          </span>
-          <span className="badge" style={{ bottom: '8%', right: '9%' }}>
-            <i />
-            10-Country Delivery
-          </span>
-        </div>
         <div className="home-hero-inner">
           <h1 className="h1-xl">
             Intelligent technologies <span className="accent">that bridge data to action.</span>
@@ -47,7 +28,12 @@ export default function HomePage() {
               See our platforms →
             </Link>
           </div>
-          <HeroCarousel />
+          <div className="hero-trust-bar">
+            <span>Enterprise GIS</span>
+            <span>RockEye ERP</span>
+            <span>Penta-B Platforms</span>
+            <span>10-Country Delivery</span>
+          </div>
         </div>
       </header>
 

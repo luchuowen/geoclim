@@ -1071,6 +1071,42 @@ a {
   font-size: 16px;
   line-height: 1.6;
 }
+.hero-trust-bar {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+  margin: 30px auto 0;
+  background: rgba(10, 12, 16, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 10px 6px;
+}
+.hero-trust-bar span {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0 16px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+  white-space: nowrap;
+}
+.hero-trust-bar span:first-child {
+  border-left: none;
+}
+@media (max-width: 640px) {
+  .hero-trust-bar {
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+  .hero-trust-bar span {
+    border-left: none;
+    padding: 4px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
 
 /* home hero content carousel */
 .hero-carousel {
