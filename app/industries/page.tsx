@@ -40,6 +40,8 @@ const SECTORS = [
     title: 'Retail & FMCG',
     body: 'Geo-marketing, supply chain visibility, and market expansion analytics.',
     icon: 'rect',
+    href: '/industries/retail-fmcg',
+    linkLabel: 'Explore Retail & FMCG →',
   },
   {
     title: 'Insurance & Finance',

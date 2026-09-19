@@ -2617,3 +2617,95 @@ body {
 .nr-proof-card p { color: var(--sub); font-size: 13px; line-height: 1.6; max-width: 46ch; margin-bottom: 12px; position: relative; z-index: 1; }
 .nr-proof-card a { color: var(--teal); font-weight: 700; font-size: 13px; position: relative; z-index: 1; }
 @media (max-width: 640px) { .nr-proof-card { padding: 32px 26px; } }
+
+/* ============================================================
+   Retail & FMCG industry page (.rf-page)
+   ============================================================ */
+.rf-page {
+  --gm: #c23b5a;
+  --gm-dim: rgba(194, 59, 90, 0.12);
+  --gm-br: #f2789a;
+  --sc: #1f7a99;
+  --sc-dim: rgba(31, 122, 153, 0.12);
+  --sc-br: #5fd0ea;
+  --mx: #b8892e;
+  --mx-dim: rgba(184, 137, 46, 0.12);
+  --mx-br: #f0c15e;
+}
+.rf-hero-map { position: absolute; inset: 0; z-index: 1; opacity: 0.55; pointer-events: none; }
+.rf-hero-inner { position: relative; z-index: 2; }
+.rf-page .page-hero h1 .stat { color: var(--gm-br); font-weight: 800; }
+.rf-hero-actions { margin-top: 34px; display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.rf-light { background: var(--lav); color: var(--ink-on-lav); padding: 90px var(--gutter); }
+.rf-light .kicker { color: #9c2c46; }
+.rf-light .section-head p { color: #514c66; }
+
+/* ---- shelf-tag stat cards ---- */
+.rf-tag-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+@media (max-width: 760px) { .rf-tag-grid { grid-template-columns: 1fr; } }
+.rf-tag { background: #fff; border: 1px solid #d8d2ba; border-radius: 14px; padding: 22px 22px 24px; position: relative; overflow: hidden; }
+.rf-tag-hole { position: absolute; top: 16px; right: 16px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid #d8d2ba; background: var(--lav); }
+.rf-barcode { display: flex; align-items: flex-end; gap: 2px; height: 22px; margin-bottom: 16px; }
+.rf-barcode span { display: block; width: 2px; background: currentColor; }
+.rf-tag.gm { color: var(--gm); }
+.rf-tag.sc { color: var(--sc); }
+.rf-tag.mx { color: var(--mx); }
+.rft-label { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; color: #8f8a70; margin-bottom: 8px; }
+.rft-stat { font-family: 'IBM Plex Mono', monospace; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; margin-bottom: 10px; }
+.rf-tag p { font-size: 12.5px; color: #4d4a3a; line-height: 1.55; margin-bottom: 8px; }
+.rft-src { font-size: 9.5px; color: #a6a184; }
+
+/* ---- map / stock / grow: pin cards ---- */
+.rf-flow { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter) 110px; }
+.rf-flow .section-head { padding: 0 36px; }
+.rf-flow .section-head h2 { text-wrap: balance; }
+.rf-stop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 860px) { .rf-stop-grid { grid-template-columns: 1fr; } }
+.rf-stop { background: var(--panel); border: 1px solid var(--panel-line); border-radius: 14px; padding: 22px 22px 24px; position: relative; }
+.rf-stop::before { content: ''; position: absolute; left: 0; top: 0; right: 0; height: 3px; }
+.rf-stop.gm::before { background: var(--gm-br); }
+.rf-stop.sc::before { background: var(--sc-br); }
+.rf-stop.mx::before { background: var(--mx-br); }
+.rf-stop-top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.rf-stop-ic { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.rf-stop.gm .rf-stop-ic { background: var(--gm-dim); }
+.rf-stop.sc .rf-stop-ic { background: var(--sc-dim); }
+.rf-stop.mx .rf-stop-ic { background: var(--mx-dim); }
+.rf-stop-ic svg { width: 17px; height: 17px; fill: none; stroke-width: 1.8; }
+.rf-stop.gm svg { stroke: var(--gm-br); }
+.rf-stop.sc svg { stroke: var(--sc-br); }
+.rf-stop.mx svg { stroke: var(--mx-br); }
+.rf-stop h3 { font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 700; color: #fff; }
+.rf-stop .rfs-tools { font-family: 'IBM Plex Mono', monospace; font-size: 9.5px; font-weight: 700; letter-spacing: 0.04em; color: var(--teal); display: block; margin-top: 2px; }
+.rf-stop p { font-size: 12.5px; color: var(--sub); line-height: 1.55; }
+
+/* ---- three parts of the shelf: header-band cards ---- */
+.rf-type-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .rf-type-grid { grid-template-columns: 1fr; } }
+.rf-type-card { background: #fff; border: 1px solid #ddd7bf; border-radius: 16px; overflow: hidden; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+.rf-type-card:hover { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) { .rf-type-card { transition: none; } .rf-type-card:hover { transform: none; } }
+.rf-tc-head { padding: 22px 24px 20px; }
+.rf-tc-head h3 { font-family: 'Inter', sans-serif; color: #fff; font-size: 19px; font-weight: 800; }
+.rf-tc-head .rf-tc-tag { margin-top: 4px; font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255, 255, 255, 0.78); display: block; }
+.rf-type-card.gm .rf-tc-head { background: linear-gradient(135deg, var(--gm), #5c1c2c); }
+.rf-type-card.sc .rf-tc-head { background: linear-gradient(135deg, var(--sc), #123a49); }
+.rf-type-card.mx .rf-tc-head { background: linear-gradient(135deg, var(--mx), #4a3612); }
+.rf-tc-body { padding: 18px 24px 22px; }
+.rf-tc-item { display: flex; gap: 9px; align-items: flex-start; padding: 9px 0; border-top: 1px solid #ece7d4; font-size: 12.5px; color: #4d4a3a; line-height: 1.5; }
+.rf-tc-item:first-child { border-top: none; }
+.rf-tc-item .rf-tc-dot { width: 5px; height: 5px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.rf-type-card.gm .rf-tc-dot { background: var(--gm); }
+.rf-type-card.sc .rf-tc-dot { background: var(--sc); }
+.rf-type-card.mx .rf-tc-dot { background: var(--mx); }
+
+/* ---- proof card (centered, sitewide pattern) ---- */
+.rf-proof { padding: 0 var(--gutter) 110px; max-width: 1100px; margin: 0 auto; display: flex; justify-content: center; }
+.rf-proof-card { max-width: 900px; width: 100%; position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(95, 208, 234, 0.09), rgba(110, 231, 199, 0.05)); border: 1px solid var(--panel-line); border-radius: 20px; padding: 44px 48px; }
+.rf-proof-spark { position: absolute; right: -10px; bottom: -10px; width: 320px; height: 130px; opacity: 0.5; }
+.rf-proof-card .kicker { margin-bottom: 14px; position: relative; z-index: 1; }
+.rf-proof-result { font-family: 'IBM Plex Mono', monospace; font-size: 46px; font-weight: 800; color: var(--sc-br); line-height: 1; margin-bottom: 14px; position: relative; z-index: 1; }
+.rf-proof-card h3 { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 10px; max-width: 34ch; position: relative; z-index: 1; color: #fff; }
+.rf-proof-card p { color: var(--sub); font-size: 13px; line-height: 1.6; max-width: 46ch; margin-bottom: 12px; position: relative; z-index: 1; }
+.rf-proof-card a { color: var(--teal); font-weight: 700; font-size: 13px; position: relative; z-index: 1; }
+@media (max-width: 640px) { .rf-proof-card { padding: 32px 26px; } }
