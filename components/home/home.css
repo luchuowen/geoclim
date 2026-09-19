@@ -1,0 +1,448 @@
+/* Homepage-only section styles (Session 1) — ported verbatim from
+   reference/geoclim_spatial_register.html for the sections this session
+   owns (hero, thesis, platform modules, see/understand/act, sectors
+   preview, statement band, proof preview, regional presence, CTA band).
+   Imported once by app/page.tsx. */
+
+/* ---------- hero ---------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 76px 0;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 1100px 620px at 50% 4%, var(--wash) 0%, rgba(235, 237, 253, 0) 64%),
+    radial-gradient(ellipse 500px 300px at 82% 2%, var(--wash-rose) 0%, rgba(244, 220, 227, 0) 70%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 36px;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+
+.pill-tag {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pill-tag:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.pill-tag:nth-child(2) {
+  animation-delay: 0.14s;
+}
+.pill-tag:nth-child(3) {
+  animation-delay: 0.23s;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 5.6vw, 72px);
+  line-height: 1.05;
+  max-width: 17ch;
+  margin-inline: auto;
+  letter-spacing: -0.015em;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.32s forwards;
+}
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 46ch;
+  margin: 26px auto 0;
+  line-height: 1.65;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.48s forwards;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  margin-top: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+}
+
+@keyframes heroIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill-tag,
+  .hero h1,
+  .hero-sub,
+  .hero-ctas {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+.hero-globe-wrap {
+  position: relative;
+  height: 360px;
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .hero-globe-wrap {
+    height: 230px;
+  }
+}
+
+.hero-globe-wrap svg {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 820px;
+  max-width: none;
+}
+
+@media (max-width: 760px) {
+  .hero-globe-wrap svg {
+    width: 520px;
+  }
+}
+
+/* ---------- thesis ---------- */
+.thesis {
+  max-width: 780px;
+}
+
+.thesis h2 {
+  font-size: clamp(26px, 3.2vw, 38px);
+  margin-top: 18px;
+}
+
+.thesis p.lead {
+  margin-top: 20px;
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 62ch;
+  line-height: 1.7;
+}
+
+/* ---------- platform modules ---------- */
+.modules {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+}
+
+.module-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  padding-block: 26px;
+  border-top: 1px solid var(--hairline);
+  align-items: baseline;
+}
+
+.module-row:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+@media (max-width: 640px) {
+  .module-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.module-code {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+.module-body h3 {
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.module-body p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 58ch;
+}
+
+/* ---------- see/understand/act ---------- */
+.siu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 52px;
+}
+
+@media (max-width: 900px) {
+  .siu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.siu-item .siu-label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ---------- sectors preview ---------- */
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  margin-top: 52px;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (max-width: 820px) {
+  .sector-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .sector-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sector-card {
+  background: #fff;
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.sector-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+}
+
+.sector-card h3 {
+  font-weight: 600;
+  font-size: 17.5px;
+}
+
+.sector-card p {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.sector-tags {
+  margin-top: auto;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+}
+
+.seg-tag {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--muted-dim);
+  border: 1px solid var(--hairline);
+  border-radius: 3px;
+  padding: 3px 7px;
+}
+
+/* ---------- statement band ---------- */
+.statement-band {
+  background: var(--ink);
+  color: #fff;
+  padding-block: 96px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 900px) {
+  .statement-band {
+    padding-block: 64px;
+  }
+}
+
+.statement-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 640px 320px at 50% 0%, rgba(52, 72, 196, 0.35) 0%, rgba(2, 5, 31, 0) 70%);
+  pointer-events: none;
+}
+
+.statement-band .eyebrow {
+  color: #8c97f0;
+  justify-content: center;
+  position: relative;
+}
+
+.statement-band .eyebrow::before {
+  background: #8c97f0;
+}
+
+.statement-band h2 {
+  position: relative;
+  font-family: var(--body);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: clamp(26px, 4.4vw, 52px);
+  line-height: 1.18;
+  max-width: 20ch;
+  margin: 22px auto 0;
+  text-wrap: balance;
+}
+
+.statement-band h2 .dim {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+/* ---------- proof preview ---------- */
+.proof-list {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proof-item {
+  display: grid;
+  grid-template-columns: 150px 1fr 220px;
+  gap: 24px;
+  padding-block: 24px;
+  border-top: 1px solid var(--hairline);
+  align-items: baseline;
+}
+
+.proof-item:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+@media (max-width: 760px) {
+  .proof-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.proof-sector {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.proof-copy {
+  font-size: 15.5px;
+}
+
+.proof-status {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .proof-status {
+    text-align: left;
+  }
+}
+
+/* ---------- regional presence ---------- */
+.region-wrap {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 52px;
+}
+
+@media (max-width: 900px) {
+  .region-wrap {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.region-readout {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.region-readout .big {
+  font-family: var(--body);
+  font-size: 52px;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.globe-panel {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 20px;
+  position: relative;
+}
+
+.globe-panel svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  padding-block: 88px;
+  text-align: center;
+}
+
+.cta-band h2 {
+  font-size: clamp(26px, 3.6vw, 40px);
+  max-width: 18ch;
+  margin: 0 auto;
+}
+
+.cta-band .hero-sub {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.cta-band .hero-ctas {
+  justify-content: center;
+}
