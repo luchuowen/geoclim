@@ -1496,7 +1496,7 @@ a {
 .sector-grid {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 0 var(--gutter) 100px;
+  padding: 80px var(--gutter) 100px;
   display: grid;
   gap: 22px;
   grid-template-columns: repeat(2, 1fr);
