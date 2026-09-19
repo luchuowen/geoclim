@@ -698,6 +698,64 @@ a {
   height: auto;
   display: block;
 }
+.pulse-badge {
+  fill: rgba(10, 12, 16, 0.68);
+}
+.pulse-accent {
+  fill: #6ee7c7;
+}
+.pulse-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  fill: #f4f4fa;
+}
+.pulse-ring {
+  fill: none;
+  stroke: #6ee7c7;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.pulse-ring-lg {
+  animation: pulseRingLg 2.2s ease-out infinite;
+}
+.pulse-ring-sm {
+  animation: pulseRingSm 2.2s ease-out infinite;
+}
+@keyframes pulseRingLg {
+  0% {
+    r: 7;
+    opacity: 0.55;
+    stroke-width: 2;
+  }
+  70%,
+  100% {
+    r: 22;
+    opacity: 0;
+    stroke-width: 0.5;
+  }
+}
+@keyframes pulseRingSm {
+  0% {
+    r: 5;
+    opacity: 0.55;
+    stroke-width: 1.6;
+  }
+  70%,
+  100% {
+    r: 16;
+    opacity: 0;
+    stroke-width: 0.4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pulse-ring-lg,
+  .pulse-ring-sm {
+    animation: none;
+    opacity: 0;
+  }
+}
 .slab-cap {
   text-align: center;
   margin-top: 110px;

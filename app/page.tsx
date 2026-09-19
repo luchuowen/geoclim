@@ -158,82 +158,57 @@ export default function HomePage() {
                 <line x1="500" y1="0" x2="500" y2="380" />
                 <line x1="750" y1="0" x2="750" y2="380" />
               </g>
+              {/* Nairobi HQ — right-side badge, large pin */}
+              <circle cx="430" cy="190" r="7" className="pulse-ring pulse-ring-lg" />
               <circle cx="430" cy="190" r="7" fill="#6ee7c7" stroke="#0a0c10" strokeWidth={2} />
-              <text
-                x="444"
-                y="195"
-                fontFamily="IBM Plex Mono"
-                fontSize="15"
-                fill="#f4f4fa"
-                stroke="#0a0c10"
-                strokeWidth={3}
-                paintOrder="stroke"
-              >
+              <rect x="440" y="176" width="130" height="28" rx="14" className="pulse-badge" />
+              <rect x="440" y="176" width="3" height="28" rx="1.5" className="pulse-accent" />
+              <text x="453" y="195" fontSize="15" className="pulse-label">
                 Nairobi HQ
               </text>
+
+              {/* Kampala — right-side badge */}
+              <circle cx="620" cy="120" r="5" className="pulse-ring pulse-ring-sm" style={{ animationDelay: '0.3s' }} />
               <circle cx="620" cy="120" r="5" fill="#6ee7c7" stroke="#0a0c10" strokeWidth={1.5} />
-              <text
-                x="632"
-                y="125"
-                fontFamily="IBM Plex Mono"
-                fontSize="13"
-                fill="#f4f4fa"
-                stroke="#0a0c10"
-                strokeWidth={3}
-                paintOrder="stroke"
-              >
+              <rect x="630" y="108" width="86" height="24" rx="12" className="pulse-badge" />
+              <rect x="630" y="108" width="3" height="24" rx="1.5" className="pulse-accent" />
+              <text x="643" y="124" fontSize="13" className="pulse-label">
                 Kampala
               </text>
+
+              {/* Dar es Salaam — right-side badge */}
+              <circle cx="700" cy="260" r="5" className="pulse-ring pulse-ring-sm" style={{ animationDelay: '0.6s' }} />
               <circle cx="700" cy="260" r="5" fill="#6ee7c7" stroke="#0a0c10" strokeWidth={1.5} />
-              <text
-                x="712"
-                y="265"
-                fontFamily="IBM Plex Mono"
-                fontSize="13"
-                fill="#f4f4fa"
-                stroke="#0a0c10"
-                strokeWidth={3}
-                paintOrder="stroke"
-              >
+              <rect x="710" y="248" width="140" height="24" rx="12" className="pulse-badge" />
+              <rect x="710" y="248" width="3" height="24" rx="1.5" className="pulse-accent" />
+              <text x="723" y="264" fontSize="13" className="pulse-label">
                 Dar es Salaam
               </text>
+
+              {/* Kigali — left-side badge */}
+              <circle cx="300" cy="230" r="5" className="pulse-ring pulse-ring-sm" style={{ animationDelay: '0.9s' }} />
               <circle cx="300" cy="230" r="5" fill="#6ee7c7" stroke="#0a0c10" strokeWidth={1.5} />
-              <text
-                x="200"
-                y="235"
-                fontFamily="IBM Plex Mono"
-                fontSize="13"
-                fill="#f4f4fa"
-                stroke="#0a0c10"
-                strokeWidth={3}
-                paintOrder="stroke"
-              >
+              <rect x="212" y="218" width="78" height="24" rx="12" className="pulse-badge" />
+              <rect x="212" y="218" width="3" height="24" rx="1.5" className="pulse-accent" />
+              <text x="225" y="234" fontSize="13" className="pulse-label">
                 Kigali
               </text>
+
+              {/* Addis Ababa — right-side badge */}
+              <circle cx="560" cy="60" r="5" className="pulse-ring pulse-ring-sm" style={{ animationDelay: '1.2s' }} />
               <circle cx="560" cy="60" r="5" fill="#6ee7c7" stroke="#0a0c10" strokeWidth={1.5} />
-              <text
-                x="572"
-                y="65"
-                fontFamily="IBM Plex Mono"
-                fontSize="13"
-                fill="#f4f4fa"
-                stroke="#0a0c10"
-                strokeWidth={3}
-                paintOrder="stroke"
-              >
+              <rect x="570" y="48" width="122" height="24" rx="12" className="pulse-badge" />
+              <rect x="570" y="48" width="3" height="24" rx="1.5" className="pulse-accent" />
+              <text x="583" y="64" fontSize="13" className="pulse-label">
                 Addis Ababa
               </text>
+
+              {/* Lusaka — left-side badge */}
+              <circle cx="200" cy="300" r="5" className="pulse-ring pulse-ring-sm" style={{ animationDelay: '1.5s' }} />
               <circle cx="200" cy="300" r="5" fill="#6ee7c7" stroke="#0a0c10" strokeWidth={1.5} />
-              <text
-                x="70"
-                y="305"
-                fontFamily="IBM Plex Mono"
-                fontSize="13"
-                fill="#f4f4fa"
-                stroke="#0a0c10"
-                strokeWidth={3}
-                paintOrder="stroke"
-              >
+              <rect x="112" y="288" width="78" height="24" rx="12" className="pulse-badge" />
+              <rect x="112" y="288" width="3" height="24" rx="1.5" className="pulse-accent" />
+              <text x="125" y="304" fontSize="13" className="pulse-label">
                 Lusaka
               </text>
             </svg>
