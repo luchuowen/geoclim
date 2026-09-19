@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import SharedDefs, { HeroTexture } from '@/components/ui/SharedDefs';
+import HeroCarousel from '@/components/home/HeroCarousel';
 
 export default function HomePage() {
   return (
@@ -46,6 +47,7 @@ export default function HomePage() {
               See our platforms →
             </Link>
           </div>
+          <HeroCarousel />
         </div>
       </header>
 

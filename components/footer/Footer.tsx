@@ -38,9 +38,12 @@ export default function Footer() {
       </div>
       <div className="sf-bottom">
         <span>© 2026 GeoClim East Africa. All rights reserved.</span>
-        <a href="https://navac.co.ke" target="_blank" rel="noopener noreferrer">
-          Designed by NAVAC GLOBAL
-        </a>
+        <span>
+          Designed by{' '}
+          <a href="https://navac.co.ke" target="_blank" rel="noopener noreferrer">
+            NAVAC GLOBAL
+          </a>
+        </span>
       </div>
     </footer>
   );
