@@ -1,0 +1,73 @@
+/* Proof list (components/proof/ProofItem.tsx) — ported verbatim from
+   reference/geoclim_spatial_register.html `.proof-list`/`.proof-item`. */
+
+.proof-list {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proof-item {
+  display: grid;
+  grid-template-columns: 150px 1fr 220px;
+  gap: 24px;
+  padding-block: 24px;
+  border-top: 1px solid var(--hairline);
+  align-items: baseline;
+}
+
+.proof-item:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+@media (max-width: 760px) {
+  .proof-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.proof-sector {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+.proof-copy {
+  font-size: 15.5px;
+}
+
+.proof-status {
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .proof-status {
+    text-align: left;
+  }
+}
+
+/* Reserved, not yet rendered: once a proof entry carries `fullNarrative`,
+   ProofItem renders a "read the engagement" expansion into this slot. */
+.proof-expand {
+  grid-column: 1 / -1;
+}
+
+/* Honesty-device explainer (app/proof/page.tsx) — not in the reference
+   mockup (that copy is new, per docs/07); styled from existing tokens only
+   (accent/panel/ink) so it reads as a deliberate callout, not a caveat. */
+.proof-explainer {
+  margin-top: 28px;
+  max-width: 60ch;
+  padding: 20px 24px;
+  border-left: 2px solid var(--accent);
+  background: var(--panel);
+  border-radius: 0 10px 10px 0;
+}
+
+.proof-explainer p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+}

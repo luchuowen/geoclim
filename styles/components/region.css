@@ -1,0 +1,55 @@
+/* Regional presence (components/regions/RegionSummary.tsx,
+   app/company/where-we-work/page.tsx) — ported verbatim from
+   reference/geoclim_spatial_register.html `.region-wrap`/`.region-readout`/
+   `.globe-panel`. */
+
+.region-wrap {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 52px;
+}
+
+@media (max-width: 900px) {
+  .region-wrap {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+.region-readout {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.region-readout .big {
+  font-family: var(--body);
+  font-size: 52px;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.region-readout .region-list {
+  color: var(--muted-dim);
+  margin-top: 14px;
+}
+
+.globe-panel {
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  background: var(--panel);
+  padding: 20px;
+  position: relative;
+}
+
+.globe-panel svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

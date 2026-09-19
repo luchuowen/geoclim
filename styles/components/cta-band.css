@@ -1,0 +1,33 @@
+/* CTA band — ported verbatim from reference/geoclim_spatial_register.html
+   `.cta-band` plus the `.hero-sub`/`.hero-ctas` values it borrows there.
+   Scoped under its own class names (`.cta-sub`/`.cta-actions`) rather than
+   `.hero-sub`/`.hero-ctas` since this session doesn't own the Home hero
+   styles those classes belong to — the rendered result is identical. */
+
+.cta-band {
+  padding-block: 88px;
+  text-align: center;
+}
+
+.cta-band h2 {
+  font-size: clamp(26px, 3.6vw, 40px);
+  max-width: 18ch;
+  margin: 0 auto;
+}
+
+.cta-band .cta-sub {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 46ch;
+  margin: 26px auto 0;
+  line-height: 1.65;
+  text-align: center;
+}
+
+.cta-band .cta-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

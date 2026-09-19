@@ -1,0 +1,36 @@
+/* Status marker (components/ui/StatusMarker.tsx) — GeoClim's "honesty
+   device". Typography matches the reference mockup's `.proof-status`
+   exactly (mono, 10.5px, 0.05em tracking, accent colour); the leading dot
+   is an addition that keeps the marker legible wherever it's dropped in,
+   not just at the right edge of a `.proof-item` row. Never shrink this
+   below its default size and never omit the dot/colour treatment — see
+   .claude/rules/content-discipline.md. */
+
+.status-marker {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.status-marker::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.status-marker--illustrative {
+  color: var(--accent);
+}
+
+.status-marker--verified {
+  color: var(--ink);
+  font-weight: 600;
+}
