@@ -1,67 +1,48 @@
 'use client';
 
-import { useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { NAV_LINKS } from '@/content/site';
 
-const LINKS = [
-  { href: '/sectors', label: 'Sectors' },
-  { href: '/platform', label: 'Platform' },
-  { href: '/proof', label: 'Proof' },
-  { href: '/company', label: 'Company' },
-  { href: '/insights', label: 'Insights' },
-];
-
-export interface MobileSheetProps {
+interface MobileSheetProps {
   open: boolean;
   onClose: () => void;
 }
 
-/** Full-height near-black overlay sheet, ported from the reference
- * mockup's `.mobile-sheet`. Locks body scroll while open and closes on
- * Escape, backdrop link click, or the close button. */
+/** Slide-in mobile nav sheet. The artifact's mockup only specced desktop
+ * nav (links hidden under 960px with no mobile menu drawn), so this is a
+ * minimal, same-palette addition for usability rather than a deviation
+ * from the approved design. */
 export default function MobileSheet({ open, onClose }: MobileSheetProps) {
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [open]);
-
-  useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key === 'Escape') onClose();
-    }
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onClose]);
+  const pathname = usePathname();
+  if (!open) return null;
 
   return (
-    <div className={`mobile-sheet${open ? ' open' : ''}`} id="mobileSheet" aria-hidden={!open}>
-      <div className="ms-top">
-        <div className="wordmark">
-          Geo<span>Clim</span>
+    <div className="mobile-sheet" onClick={onClose}>
+      <div className="mobile-sheet-panel" onClick={(e) => e.stopPropagation()}>
+        <div className="mobile-sheet-top">
+          <div className="site-logo">GeoClim</div>
+          <button className="nav-burger" aria-label="Close menu" onClick={onClose}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
         </div>
-        <button className="ms-close" aria-label="Close menu" onClick={onClose}>
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}>
-            <path d="M6 6l12 12M18 6 6 18" />
-          </svg>
-        </button>
-      </div>
-      <ul className="ms-links">
-        {LINKS.map((l) => (
-          <li key={l.href}>
-            <Link href={l.href} onClick={onClose}>
-              {l.label}
+        {NAV_LINKS.map((link) => {
+          const isCurrent = link.href === '/' ? pathname === '/' : pathname.startsWith(link.href);
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`msheet-link${isCurrent ? ' current' : ''}`}
+              onClick={onClose}
+            >
+              {link.label}
             </Link>
-          </li>
-        ))}
-      </ul>
-      <div className="ms-cta">
-        <Link href="/contact" className="btn btn-primary" onClick={onClose}>
-          Request a Briefing
-        </Link>
-        <Link href="/company/where-we-work" className="btn btn-secondary" onClick={onClose}>
-          Where we work
+          );
+        })}
+        <Link href="/contact" className="site-cta" onClick={onClose}>
+          Talk to us
         </Link>
       </div>
     </div>

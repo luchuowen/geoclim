@@ -13,7 +13,7 @@ import { getFirestore, Timestamp, type Firestore } from 'firebase-admin/firestor
  * admin UI in this repo (docs/DECISIONS Session 7).
  */
 
-export type ContactSegment = 'government' | 'enterprise' | 'partnership' | 'general';
+export type ContactSegment = 'government' | 'enterprise' | 'partnership' | 'media';
 
 export interface ContactSubmission {
   id?: string;

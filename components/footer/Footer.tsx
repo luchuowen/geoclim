@@ -1,65 +1,44 @@
 import Link from 'next/link';
+import { FOOTER_COMPANY_LINKS, CONTACT, REGIONAL_OPS } from '@/content/site';
 
-/** Four-column footer, ported from the reference mockup's footer markup.
- * Links point at the site's real routes rather than the mockup's
- * placeholder "#" anchors. */
+/** Site footer — "Direction C, Field". Ported from the artifact's
+ * `.site-footer` markup (identical on every page there): brand + one-line
+ * description, Company links, Contact, and Regional operation list. */
 export default function Footer() {
   return (
-    <footer>
-      <div className="wrap">
-        <div className="foot-grid">
-          <div>
-            <div className="wordmark" style={{ fontSize: 17 }}>
-              Geo<span>Clim</span>
-            </div>
-            <p style={{ marginTop: 14, maxWidth: '32ch', color: 'var(--muted)', fontSize: 14 }}>
-              Geospatial intelligence for East Africa. Nairobi, Kenya.
-            </p>
-          </div>
-          <div>
-            <h4>Platform</h4>
-            <ul className="foot-links">
-              <li>
-                <Link href="/sectors">Sectors</Link>
-              </li>
-              <li>
-                <Link href="/platform">Platform</Link>
-              </li>
-              <li>
-                <Link href="/proof">Proof</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4>Company</h4>
-            <ul className="foot-links">
-              <li>
-                <Link href="/company">About</Link>
-              </li>
-              <li>
-                <Link href="/company/governance-and-trust">Governance &amp; Trust</Link>
-              </li>
-              <li>
-                <Link href="/company/where-we-work">Where we work</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <ul className="foot-links">
-              <li>
-                <Link href="/contact">General enquiries</Link>
-              </li>
-              <li>
-                <Link href="/contact">Government &amp; Public Sector</Link>
-              </li>
-            </ul>
-          </div>
+    <footer className="site-footer">
+      <div className="sf-inner">
+        <div>
+          <div className="sf-brand">GeoClim East Africa</div>
+          <p className="sf-desc">
+            Professional services and technology company delivering geospatial intelligence, AI, and digital
+            transformation across Africa. Intelligent technologies that bridge data to action.
+          </p>
         </div>
-        <div className="foot-bottom">
-          <span>© GEOCLIM EAST AFRICA, 2026</span>
-          <span>NAIROBI · KAMPALA · DAR ES SALAAM · KIGALI +6</span>
+        <div className="sf-col">
+          <h4>Company</h4>
+          {FOOTER_COMPANY_LINKS.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
         </div>
+        <div className="sf-col">
+          <h4>Contact</h4>
+          <p>{CONTACT.city}</p>
+          <p>{CONTACT.phone}</p>
+          <p>{CONTACT.email}</p>
+        </div>
+        <div className="sf-col">
+          <h4>Regional operation</h4>
+          <p>{REGIONAL_OPS.slice(0, 3).join(' · ')}</p>
+          <p>{REGIONAL_OPS.slice(3, 6).join(' · ')}</p>
+          <p>{REGIONAL_OPS.slice(6, 9).join(' · ')}</p>
+        </div>
+      </div>
+      <div className="sf-bottom">
+        <span>© 2026 GeoClim East Africa. All rights reserved.</span>
+        <span>{CONTACT.hours}</span>
       </div>
     </footer>
   );

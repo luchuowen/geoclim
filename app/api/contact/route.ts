@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { saveContactSubmission } from '@/lib/firestore';
 
-const SEGMENTS = ['government', 'enterprise', 'partnership', 'general'] as const;
+const SEGMENTS = ['government', 'enterprise', 'partnership', 'media'] as const;
 type Segment = (typeof SEGMENTS)[number];
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
