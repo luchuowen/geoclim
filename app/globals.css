@@ -501,6 +501,9 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.triad-card {
+  text-align: center;
+}
 .triad-card h3 {
   color: var(--ink-on-lav);
   background: none;
@@ -510,6 +513,7 @@ a {
   font-weight: 800;
   letter-spacing: 0.04em;
   margin-bottom: 14px;
+  transition: color 0.4s ease;
 }
 .triad-card .frame {
   border: 1px solid #e3e2ee;
@@ -517,21 +521,48 @@ a {
   overflow: hidden;
   aspect-ratio: 4 / 3.1;
   position: relative;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s ease;
 }
 .triad-card .frame-photo {
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
+  transition: background-size 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .triad-card .cap {
   margin-top: 12px;
   font-size: 14px;
   font-weight: 700;
+  transition: color 0.4s ease;
 }
 .triad-card .sub {
   margin-top: 4px;
   font-size: 13px;
   color: #69677f;
   line-height: 1.5;
+}
+.triad-card:hover .frame {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 46px -18px rgba(25, 23, 51, 0.3);
+  border-color: rgba(110, 231, 199, 0.6);
+}
+.triad-card:hover .frame-photo {
+  background-size: 112%;
+}
+.triad-card:hover h3,
+.triad-card:hover .cap {
+  color: #0e8f6f;
+}
+@media (prefers-reduced-motion: reduce) {
+  .triad-card .frame,
+  .triad-card .frame-photo,
+  .triad-card h3,
+  .triad-card .cap {
+    transition: none;
+  }
+  .triad-card:hover .frame {
+    transform: none;
+  }
 }
 
 .glass {
