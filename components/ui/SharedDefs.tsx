@@ -40,3 +40,28 @@ export function HeroTexture() {
 export function HeroPhoto({ src }: { src: string }) {
   return <div className="hero-photo" style={{ backgroundImage: `url(${src})` }} aria-hidden="true" />;
 }
+
+/** One-shot animated contour/grid overlay for photographic heroes — a set of
+ * survey contour lines draw themselves in, a few data points pulse on, and a
+ * soft light sweep crosses once. Purely decorative, purposeful (reads as
+ * "mapping the terrain"), respects prefers-reduced-motion via CSS. Render
+ * between <HeroPhoto /> and <HeroTexture />. */
+export function HeroScan() {
+  return (
+    <div className="hero-scan" aria-hidden="true">
+      <svg className="hs-svg" viewBox="0 0 1200 700" preserveAspectRatio="none">
+        <g fill="none" stroke="#6ee7c7" strokeWidth={1.1}>
+          <path className="hs-line" style={{ animationDelay: '0.1s' }} pathLength={1} d="M-50,540 C 220,500 420,580 660,520 S 1120,460 1300,500" />
+          <path className="hs-line" style={{ animationDelay: '0.35s' }} pathLength={1} d="M-50,440 C 260,400 460,460 720,410 S 1080,360 1300,400" />
+          <path className="hs-line" style={{ animationDelay: '0.6s' }} pathLength={1} d="M-50,610 C 300,590 520,650 800,600 S 1160,550 1300,590" />
+        </g>
+        <g fill="#6ee7c7">
+          <circle className="hs-pt" style={{ animationDelay: '1.05s' }} cx="340" cy="210" r="3.2" />
+          <circle className="hs-pt" style={{ animationDelay: '1.25s' }} cx="760" cy="150" r="3.2" />
+          <circle className="hs-pt" style={{ animationDelay: '1.45s' }} cx="980" cy="300" r="3.2" />
+        </g>
+      </svg>
+      <div className="hs-sweep" />
+    </div>
+  );
+}

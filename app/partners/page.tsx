@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import SharedDefs, { HeroTexture, HeroPhoto } from '@/components/ui/SharedDefs';
+import SharedDefs, { HeroTexture, HeroPhoto, HeroScan } from '@/components/ui/SharedDefs';
 
 export const metadata: Metadata = {
   title: 'Partners — GeoClim East Africa',
@@ -13,6 +13,7 @@ export default function PartnersPage() {
       <SharedDefs />
       <header className="page-hero has-photo">
         <HeroPhoto src="/images/hero-partners.jpg" />
+        <HeroScan />
         <HeroTexture />
         <div className="page-hero-inner">
           <div className="breadcrumb">

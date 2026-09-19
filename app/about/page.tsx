@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import SharedDefs, { HeroTexture, HeroPhoto } from '@/components/ui/SharedDefs';
+import SharedDefs, { HeroTexture, HeroPhoto, HeroScan } from '@/components/ui/SharedDefs';
 import RegionStrip from '@/components/ui/RegionStrip';
 
 export const metadata: Metadata = {
@@ -23,6 +23,7 @@ export default function AboutPage() {
       <SharedDefs />
       <header className="page-hero has-photo">
         <HeroPhoto src="/images/hero-about.jpg" />
+        <HeroScan />
         <HeroTexture />
         <div className="page-hero-inner">
           <div className="breadcrumb">
