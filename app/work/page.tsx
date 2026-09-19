@@ -26,9 +26,12 @@ export default function WorkPage() {
             Home <span>/</span> Work
           </div>
           <h1>
-            Work, <span className="accent">with the receipts.</span>
+            Work, <span className="accent">with results.</span>
           </h1>
-          <p>Three engagements with published results. Client names are withheld by confidentiality; timelines and methodology are available on request.</p>
+          <p>
+            Three engagements with published outcomes. Client names are confidential, but we&apos;re happy to share
+            the timelines, approach, and methodology behind each project on request.
+          </p>
         </div>
       </header>
 

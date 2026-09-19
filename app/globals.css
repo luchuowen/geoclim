@@ -290,28 +290,33 @@ a {
   transform: rotate(180deg);
 }
 .nav-dd-panel {
+  /* Flush against the trigger's bottom edge (no positional gap) so the
+     cursor is always over either the trigger or the panel while moving
+     between them — a gap here is a dead zone that drops :hover before
+     the panel is reached. The visual breathing room below the nav bar
+     comes from padding-top instead, which is part of the hoverable box. */
   position: absolute;
-  top: calc(100% + 18px);
+  top: 100%;
   left: 50%;
-  transform: translate(-50%, 6px);
+  transform: translate(-50%, 0);
   width: 520px;
   max-width: calc(100vw - 48px);
   background: var(--panel);
   border: 1px solid var(--panel-line);
   border-radius: 14px;
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
-  padding: 16px;
+  padding: 34px 16px 16px;
+  background-clip: padding-box;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+  transition: opacity 0.16s ease, visibility 0.16s;
   z-index: 60;
 }
 .nav-dd:hover .nav-dd-panel,
 .nav-dd:focus-within .nav-dd-panel {
   opacity: 1;
   visibility: visible;
-  transform: translate(-50%, 0);
   pointer-events: auto;
 }
 .nav-dd-grid {
