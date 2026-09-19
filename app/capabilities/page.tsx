@@ -99,11 +99,11 @@ export default function CapabilitiesPage() {
             Home <span>/</span> Capabilities
           </div>
           <h1>
-            Four ways we work. <span className="accent">One platform underneath.</span>
+            Four ways we work. <span className="accent">One foundation.</span>
           </h1>
           <p>
-            Professional services, software vending, technical advisory, and consulting — all delivered on the
-            same Penta-B and RockEye foundation, tuned to each client&apos;s operating reality.
+            Professional services, software solutions, technical advisory, and consulting — all built on the
+            same Penta-B and RockEye foundation, tailored to how each client operates.
           </p>
         </div>
       </header>
@@ -118,8 +118,8 @@ export default function CapabilitiesPage() {
         ))}
       </div>
 
-      <section className="triad">
-        <div className="triad-head">Eight focused solutions, built to be combined rather than bought one at a time.</div>
+      <section className="triad cap-triad">
+        <div className="triad-head">Eight focused solutions. Built to work together.</div>
         <div className="sol-grid">
           {SOLUTIONS.map((s) => (
             <div className="sol-card" key={s.title}>
