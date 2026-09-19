@@ -110,7 +110,6 @@ export default function HomePage() {
 
       <section className="glass">
         <div>
-          <div className="kicker">Why two named partners, not twenty vague ones</div>
           <h2>Maps, workflows, and enterprise data — reconciled, not just displayed side by side.</h2>
           <p>
             Most GIS vendors stop at the map. GeoClim pairs Penta-B&apos;s geo-enabled enterprise platforms with
