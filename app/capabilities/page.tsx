@@ -15,14 +15,77 @@ const SERVICE_LINES = [
 ];
 
 const SOLUTIONS = [
-  { title: 'SYSTEM INTEGRATION', body: 'Seamless enterprise and spatial data integration across existing systems.' },
-  { title: 'PRECISION AGRICULTURE', body: 'AI-driven crop health, soil monitoring, and yield forecasting.' },
-  { title: 'SPATIAL DATA INTELLIGENCE', body: "Turning large geospatial datasets into decisions teams can act on." },
-  { title: 'AI FUSION', body: 'Embedding AI into decision systems for predictive and prescriptive analytics.' },
-  { title: 'CROP MONITORING', body: 'Satellite, UAV, and IoT-enabled monitoring for better farm management.' },
-  { title: 'APP CONFIGURATION', body: 'Custom-built apps for field operations, customer engagement, and asset tracking.' },
-  { title: 'GEO-FARM PLATFORMS', body: 'Digital ecosystems supporting farmers, cooperatives, and agribusinesses.' },
-  { title: 'GEO-ANALYTICS', body: 'Spatial intelligence for business expansion, policy, and infrastructure planning.' },
+  {
+    title: 'SYSTEM INTEGRATION',
+    body: 'Seamless enterprise and spatial data integration across existing systems.',
+    icon: (
+      <>
+        <path d="M8 12h8M12 8v8" />
+        <circle cx="12" cy="12" r="9" />
+      </>
+    ),
+  },
+  {
+    title: 'PRECISION AGRICULTURE',
+    body: 'AI-driven crop health, soil monitoring, and yield forecasting.',
+    icon: (
+      <>
+        <path d="M12 3c3 3 4 6 4 9a4 4 0 0 1-8 0c0-3 1-6 4-9z" />
+        <path d="M12 21v-6" />
+      </>
+    ),
+  },
+  {
+    title: 'SPATIAL DATA INTELLIGENCE',
+    body: 'Turning large geospatial datasets into decisions teams can act on.',
+    icon: <path d="M3 12h4l3-8 4 16 3-8h4" />,
+  },
+  {
+    title: 'AI FUSION',
+    body: 'Embedding AI into decision systems for predictive and prescriptive analytics.',
+    icon: (
+      <>
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />
+      </>
+    ),
+  },
+  {
+    title: 'CROP MONITORING',
+    body: 'Satellite, UAV, and IoT-enabled monitoring for better farm management.',
+    icon: (
+      <>
+        <rect x="3" y="3" width="8" height="8" rx="1.5" />
+        <rect x="13" y="13" width="8" height="8" rx="1.5" />
+        <path d="M11 7h6a2 2 0 0 1 2 2v4" />
+      </>
+    ),
+  },
+  {
+    title: 'APP CONFIGURATION',
+    body: 'Custom-built apps for field operations, customer engagement, and asset tracking.',
+    icon: (
+      <>
+        <rect x="5" y="3" width="14" height="18" rx="2" />
+        <path d="M9 7h6M9 11h6M9 15h3" />
+      </>
+    ),
+  },
+  {
+    title: 'GEO-FARM PLATFORMS',
+    body: 'Digital ecosystems supporting farmers, cooperatives, and agribusinesses.',
+    icon: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z" />
+      </>
+    ),
+  },
+  {
+    title: 'GEO-ANALYTICS',
+    body: 'Spatial intelligence for business expansion, policy, and infrastructure planning.',
+    icon: <path d="M4 19h16M8 19V9M13 19V5M18 19v-7" />,
+  },
 ];
 
 export default function CapabilitiesPage() {
@@ -57,13 +120,14 @@ export default function CapabilitiesPage() {
 
       <section className="triad">
         <div className="triad-head">Eight focused solutions, built to be combined rather than bought one at a time.</div>
-        <div className="triad-grid triad-grid-4">
+        <div className="sol-grid">
           {SOLUTIONS.map((s) => (
-            <div className="triad-card" key={s.title}>
+            <div className="sol-card" key={s.title}>
+              <div className="sol-badge" aria-hidden="true">
+                <svg viewBox="0 0 24 24">{s.icon}</svg>
+              </div>
               <h3>{s.title}</h3>
-              <p className="sub" style={{ marginTop: 12 }}>
-                {s.body}
-              </p>
+              <p>{s.body}</p>
             </div>
           ))}
         </div>

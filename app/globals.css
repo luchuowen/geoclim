@@ -501,6 +501,74 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* solutions grid (Capabilities — "Eight focused solutions") — soft
+   tinted tiles with a gradient icon badge, Option C */
+.sol-grid {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 960px) {
+  .sol-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .sol-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.sol-card {
+  background: linear-gradient(180deg, #f7f7fb 0%, #f1f0f8 100%);
+  border-radius: 16px;
+  padding: 28px 22px;
+  transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sol-card:hover {
+  box-shadow: 0 22px 44px -22px rgba(25, 23, 51, 0.22);
+  transform: translateY(-4px);
+}
+.sol-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0e8f6f, #6ee7c7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+.sol-badge svg {
+  width: 18px;
+  height: 18px;
+  stroke: #fff;
+  fill: none;
+  stroke-width: 1.8;
+}
+.sol-card h3 {
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--ink-on-lav);
+  margin-bottom: 10px;
+}
+.sol-card p {
+  font-size: 13px;
+  color: #69677f;
+  line-height: 1.55;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sol-card {
+    transition: none;
+  }
+  .sol-card:hover {
+    transform: none;
+  }
+}
+
 .triad-card {
   text-align: center;
 }
