@@ -802,45 +802,73 @@ a {
 .facts-inner {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 46px var(--gutter);
+  padding: 44px var(--gutter);
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 76px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 .fact-item {
+  flex: 1 1 200px;
   text-align: center;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  padding: 26px 22px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fact-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6ee7c7, transparent);
+  opacity: 0.7;
+}
+.fact-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(110, 231, 199, 0.3);
+}
+.fact-icon {
+  width: 22px;
+  height: 22px;
+  margin: 0 auto 16px;
+  stroke: #6ee7c7;
+  fill: none;
+  stroke-width: 1.6;
+  display: block;
 }
 .fact-item b {
   display: block;
   font-family: 'Inter', sans-serif;
-  font-size: 34px;
-  font-weight: 900;
+  font-size: 32px;
+  font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1;
   white-space: nowrap;
-  background: linear-gradient(180deg, #ffffff 0%, #bff2df 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.fact-tick {
-  width: 30px;
-  height: 3px;
-  border-radius: 2px;
-  margin: 14px auto 13px;
-  background: linear-gradient(90deg, transparent, #6ee7c7, transparent);
+  color: #fff;
 }
 .fact-item span {
   display: block;
+  margin-top: 10px;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--sub);
   white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fact-item {
+    transition: none;
+  }
+  .fact-item:hover {
+    transform: none;
+  }
 }
 
 .section-head {
@@ -999,6 +1027,7 @@ a {
   line-height: 1.12;
   letter-spacing: -0.02em;
   color: #fff;
+  text-wrap: balance;
 }
 .page-hero h1 .accent {
   font-style: italic;
@@ -1059,6 +1088,7 @@ a {
   line-height: 1.15;
   letter-spacing: -0.02em;
   color: #fff;
+  text-wrap: balance;
 }
 .h1-xl .accent {
   font-style: italic;

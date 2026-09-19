@@ -13,12 +13,11 @@ export default function HomePage() {
         <HeroTexture />
         <div className="home-hero-inner">
           <h1 className="h1-xl">
-            Intelligent technologies <span className="accent">that bridge data to action.</span>
+            Smart technology <span className="accent">that turns data into action.</span>
           </h1>
           <p className="home-hero-sub">
-            GeoClim East Africa connects geospatial intelligence, enterprise systems, and AI into one operational
-            layer — through named technology partnerships with Penta-B and RockEye ERP, delivered across ten
-            African markets.
+            GeoClim East Africa brings geospatial intelligence, enterprise systems, and AI together in one connected
+            operational layer — powered by Penta-B and RockEye ERP partnerships across 10 African markets.
           </p>
           <div style={{ marginTop: 36, display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link className="pill-cta" href="/contact">
@@ -40,23 +39,37 @@ export default function HomePage() {
       <div className="facts">
         <div className="facts-inner">
           <div className="fact-item">
+            <svg className="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z" />
+            </svg>
             <b>10</b>
-            <div className="fact-tick" aria-hidden="true" />
             <span>Countries served</span>
           </div>
           <div className="fact-item">
+            <svg className="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 12l3 3 5-6" />
+              <circle cx="12" cy="12" r="9" />
+            </svg>
             <b>2</b>
-            <div className="fact-tick" aria-hidden="true" />
             <span>Technology partners</span>
           </div>
           <div className="fact-item">
+            <svg className="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="7" height="7" rx="1.2" />
+              <rect x="14" y="3" width="7" height="7" rx="1.2" />
+              <rect x="3" y="14" width="7" height="7" rx="1.2" />
+              <rect x="14" y="14" width="7" height="7" rx="1.2" />
+            </svg>
             <b>6</b>
-            <div className="fact-tick" aria-hidden="true" />
             <span>Industries served</span>
           </div>
           <div className="fact-item">
+            <svg className="fact-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" />
+              <circle cx="12" cy="12" r="3.4" />
+            </svg>
             <b>4</b>
-            <div className="fact-tick" aria-hidden="true" />
             <span>Service lines</span>
           </div>
         </div>
