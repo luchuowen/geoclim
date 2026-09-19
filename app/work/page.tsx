@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SharedDefs, { HeroTexture, HeroPhoto, HeroScan } from '@/components/ui/SharedDefs';
+import Reveal from '@/components/home/Reveal';
 
 export const metadata: Metadata = {
   title: 'Work — GeoClim East Africa',
@@ -32,7 +33,7 @@ export default function WorkPage() {
       </header>
 
       <div className="case-grid">
-        <div className="case-card">
+        <Reveal className="case-card">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-agriculture.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Agriculture · Kenya</div>
@@ -40,8 +41,8 @@ export default function WorkPage() {
             <div className="cc-result">30% yield increase</div>
             <p className="cc-note">Real-time monitoring applied across the growing season. Methodology and timeframe available on request.</p>
           </div>
-        </div>
-        <div className="case-card">
+        </Reveal>
+        <Reveal className="case-card" delay="0.1s">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-utilities.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Utilities · Uganda</div>
@@ -49,8 +50,8 @@ export default function WorkPage() {
             <div className="cc-result">25% less water loss</div>
             <p className="cc-note">Smart GIS monitoring identified network losses ahead of manual inspection cycles.</p>
           </div>
-        </div>
-        <div className="case-card">
+        </Reveal>
+        <Reveal className="case-card" delay="0.2s">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-transport.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Transportation · Tanzania</div>
@@ -58,7 +59,7 @@ export default function WorkPage() {
             <div className="cc-result">Reduced congestion</div>
             <p className="cc-note">AI-driven insight into pilot corridors; full metrics available under NDA.</p>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       <section className="section-head">

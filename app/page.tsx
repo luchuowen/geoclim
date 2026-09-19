@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SharedDefs, { HeroTexture, HeroPhoto, HeroScan } from '@/components/ui/SharedDefs';
 import HeroCarousel from '@/components/home/HeroCarousel';
+import Reveal from '@/components/home/Reveal';
 
 export default function HomePage() {
   return (
@@ -119,7 +120,7 @@ export default function HomePage() {
             <li>AI-powered ERP analytics and real-time dashboards (RockEye)</li>
           </ul>
         </div>
-        <div className="stack">
+        <Reveal className="stack">
           <div className="layer l1">
             <span>RockEye — Enterprise Data</span>
           </div>
@@ -129,7 +130,7 @@ export default function HomePage() {
           <div className="layer l3">
             <span>GIS + Satellite / UAV / IoT</span>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="slab-wrap">
@@ -239,7 +240,7 @@ export default function HomePage() {
           </div>
         </div>
         <p className="slab-cap">
-          Illustrative regional footprint — Kenya, Uganda, Tanzania, Rwanda, Ethiopia, Zambia, Malawi, DRC,
+          Regional footprint — Kenya, Uganda, Tanzania, Rwanda, Ethiopia, Zambia, Malawi, DRC,
           Mozambique, Zimbabwe
         </p>
       </section>
@@ -251,7 +252,7 @@ export default function HomePage() {
         </div>
       </section>
       <div className="case-grid">
-        <div className="case-card">
+        <Reveal className="case-card">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-agriculture.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Agriculture · Kenya</div>
@@ -259,8 +260,8 @@ export default function HomePage() {
             <div className="cc-result">30%</div>
             <p className="cc-note">Reported yield increase, per GeoClim&apos;s published case results.</p>
           </div>
-        </div>
-        <div className="case-card">
+        </Reveal>
+        <Reveal className="case-card" delay="0.1s">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-utilities.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Utilities · Uganda</div>
@@ -268,8 +269,8 @@ export default function HomePage() {
             <div className="cc-result">−25%</div>
             <p className="cc-note">Reported reduction in water loss, per GeoClim&apos;s published case results.</p>
           </div>
-        </div>
-        <div className="case-card">
+        </Reveal>
+        <Reveal className="case-card" delay="0.2s">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-transport.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Transportation · Tanzania</div>
@@ -277,7 +278,7 @@ export default function HomePage() {
             <div className="cc-result">↓ congestion</div>
             <p className="cc-note">Directional improvement reported in pilot corridors; methodology on request.</p>
           </div>
-        </div>
+        </Reveal>
       </div>
 
       <section className="cta-band">
