@@ -1,0 +1,267 @@
+/* Company section — /company, /company/leadership, /company/partnerships,
+   /company/governance-and-trust. New classes (not ported from the
+   reference mockup, which has no interior company pages); values follow
+   the tokens in styles/tokens.css and the radius table in
+   .claude/rules/design-tokens.md. Owned by Session 5 — do not use these
+   class names from another session's pages. */
+
+/* ---------- shared page header ---------- */
+.co-header {
+  max-width: 780px;
+}
+
+.co-header h1 {
+  font-size: clamp(32px, 4.4vw, 48px);
+  margin-top: 18px;
+}
+
+.co-lead {
+  margin-top: 20px;
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 62ch;
+  line-height: 1.7;
+}
+
+/* ---------- vision / mission ---------- */
+.company-statement {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 40px;
+  border-top: 1px solid var(--hairline);
+}
+
+@media (max-width: 760px) {
+  .company-statement {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.company-statement p {
+  margin-top: 14px;
+  font-family: var(--display);
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* ---------- capability list ---------- */
+.capability-list {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.capability-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding-block: 18px;
+  border-top: 1px solid var(--hairline);
+}
+
+.capability-list li:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.capability-index {
+  font-size: 12px;
+  color: var(--muted-dim);
+  letter-spacing: 0.04em;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+.capability-name {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* ---------- image slot ---------- */
+.img-slot {
+  margin: 56px 0 0;
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.img-slot-caption {
+  font-size: 11px;
+  color: var(--muted-dim);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- sub-nav grid ---------- */
+.subnav-grid {
+  margin-top: 52px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--hairline);
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@media (max-width: 640px) {
+  .subnav-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.subnav-card {
+  background: #fff;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--ink);
+  transition: background 0.15s;
+}
+
+.subnav-card:hover {
+  background: var(--panel);
+}
+
+.subnav-card-title {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.subnav-card-desc {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.subnav-card-arrow {
+  margin-top: auto;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 13px;
+}
+
+/* ---------- quiet statement pages (Leadership / Partnerships / Governance) ---------- */
+.co-quiet {
+  max-width: 700px;
+}
+
+.co-quiet p {
+  margin-top: 18px;
+  font-size: 16.5px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.co-quiet p:first-of-type {
+  margin-top: 28px;
+}
+
+.co-marker {
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid var(--hairline);
+  border-radius: 32px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--panel);
+}
+
+.co-marker::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.co-partner-name {
+  margin-top: 32px;
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.co-partner-name span {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.co-note {
+  margin-top: 28px;
+  font-size: 14px;
+  color: var(--muted-dim);
+  max-width: 58ch;
+  line-height: 1.6;
+}
+
+.co-gov-list {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.co-gov-list li {
+  padding-block: 20px;
+  border-top: 1px solid var(--hairline);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
+}
+
+.co-gov-list li:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+@media (max-width: 640px) {
+  .co-gov-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.co-gov-list h3 {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.co-gov-list p {
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.7;
+}
+
+/* ---------- insights empty state ---------- */
+.insights-empty {
+  margin-top: 24px;
+  padding: 40px 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.insights-empty p {
+  color: var(--muted);
+  font-size: 16px;
+}

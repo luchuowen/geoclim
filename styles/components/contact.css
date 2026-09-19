@@ -1,0 +1,87 @@
+/* Contact — /contact. New classes (not ported from the reference mockup,
+   which has no interior contact page); the segmented tab row reuses the
+   sitewide `.btn`/`.btn-primary`/`.btn-secondary` pattern from the CTA
+   band (reference/geoclim_spatial_register.html `.cta-band`). Owned by
+   Session 5. */
+
+.contact-hero {
+  padding-bottom: 0;
+}
+
+.contact-panel {
+  margin-top: 52px;
+  max-width: 640px;
+}
+
+.contact-segments {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.contact-framing {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.6;
+}
+
+.contact-form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-field label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted-dim);
+}
+
+.contact-field input,
+.contact-field textarea {
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.contact-field input[aria-invalid='true'],
+.contact-field textarea[aria-invalid='true'] {
+  border-color: #b3273f;
+}
+
+.contact-field-error {
+  font-size: 12.5px;
+  color: #b3273f;
+}
+
+.contact-form > .btn {
+  align-self: flex-start;
+}
+
+.contact-status {
+  font-size: 14px;
+  color: var(--accent);
+  min-height: 1.4em;
+}
