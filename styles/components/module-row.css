@@ -1,0 +1,237 @@
+/* Platform section styles (Session 3 — docs/06). This is the one stylesheet
+   slot docs/02 §2-3 registers for this session ("styles/components/
+   module-row.css (if absent)"), so it carries every rule specific to the
+   platform hub and module-detail pages, not just `.module-row` — the
+   sitewide primitives (`.wrap`, `.hairline`, `.eyebrow`, `section`,
+   `.reveal`, `.btn`) are ported once in styles/base.css /
+   styles/components/buttons.css (Session 0) and reused as-is here.
+
+   `.modules` / `.module-row` / `.module-code` / `.module-body` are ported
+   verbatim from reference/geoclim_spatial_register.html; `.module-row` is
+   additionally made a clickable link here (the mockup's version was static
+   text), so a hover affordance is added without changing the ported
+   layout values. */
+
+/* ---------- platform hub intro ---------- */
+.platform-intro {
+  max-width: 780px;
+}
+
+.platform-intro h1 {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: clamp(26px, 3.2vw, 38px);
+  margin-top: 18px;
+  max-width: 20ch;
+}
+
+.platform-intro p.lead {
+  margin-top: 20px;
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 62ch;
+  line-height: 1.7;
+}
+
+/* ---------- platform module list (hub) ---------- */
+.modules {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+}
+
+a.module-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  padding-block: 26px;
+  border-top: 1px solid var(--hairline);
+  align-items: baseline;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+
+a.module-row:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+a.module-row:hover,
+a.module-row:focus-visible {
+  background: var(--panel);
+}
+
+@media (max-width: 640px) {
+  a.module-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+.module-code {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+.module-body h3 {
+  font-weight: 600;
+  font-size: 19px;
+  margin-bottom: 8px;
+}
+
+.module-body p {
+  color: var(--muted);
+  font-size: 15px;
+  max-width: 58ch;
+}
+
+/* ---------- module detail: header ---------- */
+.module-header {
+  max-width: 820px;
+}
+
+.module-header .module-code {
+  font-size: 13px;
+}
+
+.module-header h1 {
+  font-family: var(--body);
+  font-weight: 700;
+  font-size: clamp(30px, 4.4vw, 48px);
+  margin-top: 16px;
+  max-width: 18ch;
+}
+
+.module-header .outcome {
+  margin-top: 22px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 56ch;
+  line-height: 1.65;
+}
+
+/* ---------- module detail: "what it does" ---------- */
+.module-what {
+  margin-top: 52px;
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.module-what p {
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.7;
+}
+
+/* ---------- module detail: data panel ---------- */
+.module-panel {
+  margin-top: 52px;
+  max-width: 560px;
+}
+
+/* ---------- module detail: "how it fits" ---------- */
+.module-fit {
+  margin-top: 52px;
+  max-width: 680px;
+  border-left: 2px solid var(--accent);
+  padding-left: 22px;
+}
+
+.module-fit .fit-label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.module-fit p {
+  font-size: 16.5px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ---------- module detail: related sectors ---------- */
+.module-sectors {
+  margin-top: 52px;
+}
+
+.module-sectors .sectors-label {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--muted-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.sector-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+a.sector-chip {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 999px;
+  padding: 8px 16px;
+  text-decoration: none;
+  background: #fff;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+a.sector-chip:hover,
+a.sector-chip:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ---------- module detail: CTA band fallback ----------
+   Local fallback for the (not-yet-present) shared CtaBand component —
+   see components/platform/PlatformCtaBand.tsx. Self-contained, unlike the
+   reference file's `.cta-band` which composes hero-only classes
+   (`.hero-sub`, `.hero-ctas`) that are not guaranteed to exist in
+   styles/ yet. */
+.platform-cta {
+  padding-block: 88px;
+  text-align: center;
+}
+
+.platform-cta .eyebrow {
+  justify-content: center;
+}
+
+.platform-cta h2 {
+  font-size: clamp(26px, 3.6vw, 40px);
+  max-width: 18ch;
+  margin: 18px auto 0;
+}
+
+.platform-cta .cta-sub {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 46ch;
+  margin: 26px auto 0;
+  line-height: 1.65;
+}
+
+.platform-cta .cta-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 36px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
