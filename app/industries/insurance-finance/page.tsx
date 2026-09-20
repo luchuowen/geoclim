@@ -94,10 +94,6 @@ export default function InsuranceFinanceIndustryPage() {
         </svg>
         <HeroTexture />
         <div className="page-hero-inner if-hero-inner">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link> <span>/</span> <Link href="/industries">Industries</Link> <span>/</span> Insurance
-            &amp; Finance
-          </div>
           <h1>
             Kenya insures <span className="stat">2.63%</span> of its GDP. <span className="stat">1 in 7</span> adults
             still don&apos;t exist to a lender at all.

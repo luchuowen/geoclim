@@ -91,9 +91,6 @@ export default function AgricultureIndustryPage() {
         </svg>
         <HeroTexture />
         <div className="page-hero-inner ag-hero-inner">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link> <span>/</span> <Link href="/industries">Industries</Link> <span>/</span> Agriculture
-          </div>
           <h1>
             <span className="stat">23%</span> of Kenya&apos;s GDP. Up to <span className="stat">40%</span> of what it
             grows —<br />

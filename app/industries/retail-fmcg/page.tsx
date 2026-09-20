@@ -74,10 +74,6 @@ export default function RetailFmcgIndustryPage() {
         </svg>
         <HeroTexture />
         <div className="page-hero-inner rf-hero-inner">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link> <span>/</span> <Link href="/industries">Industries</Link> <span>/</span> Retail &amp;
-            FMCG
-          </div>
           <h1>
             <span className="stat">KSh 800bn</span> lost to counterfeits every year. <span className="stat">43%</span>{' '}
             of FMCG sales happen off the map.

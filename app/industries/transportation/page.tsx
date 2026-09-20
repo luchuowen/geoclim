@@ -90,9 +90,6 @@ export default function TransportationIndustryPage() {
         </svg>
         <HeroTexture />
         <div className="page-hero-inner tr-hero-inner">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link> <span>/</span> <Link href="/industries">Industries</Link> <span>/</span> Transportation
-          </div>
           <h1>
             <span className="stat">4th</span> most congested city on Earth. <span className="stat">KSh 100bn</span> lost to
             it, every year.

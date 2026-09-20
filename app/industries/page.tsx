@@ -85,9 +85,6 @@ export default function IndustriesPage() {
         <HeroScan />
         <HeroTexture />
         <div className="page-hero-inner">
-          <div className="breadcrumb">
-            Home <span>/</span> Industries
-          </div>
           <h1>
             Six industries. <span className="accent">One way of working.</span>
           </h1>

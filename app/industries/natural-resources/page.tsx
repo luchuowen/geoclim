@@ -89,10 +89,6 @@ export default function NaturalResourcesIndustryPage() {
         </svg>
         <HeroTexture />
         <div className="page-hero-inner nr-hero-inner">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link> <span>/</span> <Link href="/industries">Industries</Link> <span>/</span> Natural
-            Resources
-          </div>
           <h1>
             <span className="stat">KSh 534bn</span> lost to deforestation every year. <span className="stat">80%</span> of
             Kenya&apos;s land is barely watched at all.
