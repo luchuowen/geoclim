@@ -225,7 +225,7 @@ export default function CapabilitiesPage() {
         </div>
       </div>
 
-      <section className="cta-band">
+      <section className="cta-band cap-cta-band">
         <h2>Not sure which service line fits?</h2>
         <p>Most engagements start as advisory and grow into a full platform deployment.</p>
         <div className="actions">
