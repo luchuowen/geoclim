@@ -758,9 +758,9 @@ a {
     border-color 0.4s ease;
 }
 .triad-card .frame-photo {
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
-  transition: background-size 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  background-repeat: no-repeat;
 }
 .triad-card .cap {
   margin-top: 12px;
@@ -775,12 +775,9 @@ a {
   line-height: 1.5;
 }
 .triad-card:hover .frame {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.05);
   box-shadow: 0 26px 46px -18px rgba(25, 23, 51, 0.3);
   border-color: rgba(110, 231, 199, 0.6);
-}
-.triad-card:hover .frame-photo {
-  background-size: 112%;
 }
 .triad-card:hover h3,
 .triad-card:hover .cap {
