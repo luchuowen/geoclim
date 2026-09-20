@@ -1,6 +1,7 @@
 import Link from 'next/link';
-import SharedDefs, { HeroTexture, HeroPhoto, HeroScan } from '@/components/ui/SharedDefs';
+import SharedDefs, { HeroTexture } from '@/components/ui/SharedDefs';
 import Reveal from '@/components/home/Reveal';
+import HeroImageCarousel from '@/components/home/HeroImageCarousel';
 
 export default function HomePage() {
   return (
@@ -8,8 +9,7 @@ export default function HomePage() {
       <SharedDefs />
 
       <header className="home-hero has-photo">
-        <HeroPhoto src="/images/hero-home.jpg" />
-        <HeroScan />
+        <HeroImageCarousel />
         <HeroTexture />
         <div className="home-hero-inner">
           <h1 className="h1-xl">
