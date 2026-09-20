@@ -824,22 +824,36 @@ a {
   line-height: 1.7;
   max-width: 48ch;
 }
-.glass-list {
-  margin-top: 22px;
+.glass-points {
+  margin-top: 30px;
   display: grid;
-  gap: 12px;
+  gap: 22px;
 }
-.glass-list li {
-  list-style: none;
-  display: flex;
-  gap: 10px;
-  font-size: 14.5px;
-  color: #c7cedb;
+.glass-point {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 14px;
 }
-.glass-list li::before {
-  content: '—';
+.glass-point .num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--teal);
-  flex-shrink: 0;
+  padding-top: 2px;
+}
+.glass-point h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.glass-point p {
+  font-size: 13px;
+  color: var(--sub);
+  line-height: 1.55;
+  margin-top: 0;
+  max-width: none;
 }
 .stack {
   position: relative;
@@ -2426,11 +2440,11 @@ body {
   .glass {
     text-align: center;
   }
-  .glass-list {
-    justify-items: center;
-  }
-  .glass-list li {
-    justify-content: center;
+  .glass-points {
+    text-align: left;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
   }
   .facts-inner {
     display: grid;

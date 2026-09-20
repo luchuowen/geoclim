@@ -118,11 +118,29 @@ export default function HomePage() {
             RockEye&apos;s intelligent ERP, so a spatial finding becomes a work order, an asset record, or a
             forecast — inside the same system your teams already run on.
           </p>
-          <ul className="glass-list">
-            <li>Multi-tenant, multilingual GIS applications (Penta-B Maps &amp; Apps)</li>
-            <li>Geo-enabled business process automation (PBPM)</li>
-            <li>AI-powered ERP analytics and real-time dashboards (RockEye)</li>
-          </ul>
+          <div className="glass-points">
+            <div className="glass-point">
+              <div className="num">01</div>
+              <div>
+                <h4>Penta-B Maps &amp; Apps</h4>
+                <p>Multi-tenant, multilingual GIS applications built for field and back-office teams alike.</p>
+              </div>
+            </div>
+            <div className="glass-point">
+              <div className="num">02</div>
+              <div>
+                <h4>PBPM</h4>
+                <p>Geo-enabled business process automation that turns a map finding into a work order.</p>
+              </div>
+            </div>
+            <div className="glass-point">
+              <div className="num">03</div>
+              <div>
+                <h4>RockEye</h4>
+                <p>AI-powered ERP analytics and real-time dashboards on the same operational record.</p>
+              </div>
+            </div>
+          </div>
         </div>
         <Reveal className="stack">
           <div className="layer l1">
