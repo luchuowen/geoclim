@@ -860,6 +860,7 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(4px);
   box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
   display: flex;
   align-items: flex-end;
   padding: 20px;
@@ -867,14 +868,22 @@ a {
   transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1),
     filter 0.5s ease, opacity 0.5s ease;
 }
+.stack .layer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(6, 8, 12, 0.85) 100%);
+  pointer-events: none;
+}
 .stack .layer span {
+  position: relative;
+  z-index: 1;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: #fff;
-  opacity: 0.92;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6), 0 4px 14px rgba(0, 0, 0, 0.45);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 .l1 {
   background: linear-gradient(135deg, rgba(20, 40, 34, 0.55), rgba(20, 30, 28, 0.25)), url(/images/stack-rockeye.jpg);
@@ -896,7 +905,6 @@ a {
 }
 .stack .layer:hover {
   z-index: 5;
-  transform: rotate(0deg) translate(0, -14px) scale(1.05);
   box-shadow: 0 44px 72px -18px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(110, 231, 199, 0.4);
   filter: brightness(1.08) saturate(1.08);
 }
