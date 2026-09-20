@@ -79,13 +79,12 @@ export default function RetailFmcgIndustryPage() {
             FMCG
           </div>
           <h1>
-            <span className="stat">KSh 800bn</span> lost to counterfeit goods every year. <span className="stat">43%</span>{' '}
-            of FMCG sales happen where no one is mapping them.
+            <span className="stat">KSh 800bn</span> lost to counterfeits every year. <span className="stat">43%</span>{' '}
+            of FMCG sales happen off the map.
           </h1>
           <p>
-            Retail in Kenya runs through thousands of dukas, kiosks, and open-air stalls that never show up on a
-            distribution plan. GeoClim turns every outlet, route, and shelf into mapped, live data — so expansion,
-            distribution, and marketing decisions get made on what&apos;s actually there, not a five-year-old census.
+            GeoClim maps Kenya&apos;s fragmented retail network — outlets, routes, and shelves — turning real-world
+            distribution into live data for smarter expansion, sales, and marketing.
           </p>
           <div className="rf-hero-actions">
             <Link className="pill-cta" href="/contact">
