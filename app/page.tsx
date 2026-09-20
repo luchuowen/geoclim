@@ -229,7 +229,7 @@ export default function HomePage() {
         </div>
       </section>
       <div className="case-grid">
-        <Reveal className="case-card">
+        <Reveal className="case-card ag">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-agriculture.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Agriculture · Kenya</div>
@@ -238,7 +238,7 @@ export default function HomePage() {
             <p className="cc-note">Reported yield increase, per GeoClim&apos;s published case results.</p>
           </div>
         </Reveal>
-        <Reveal className="case-card" delay="0.1s">
+        <Reveal className="case-card ut" delay="0.1s">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-utilities.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Utilities · Uganda</div>
@@ -247,7 +247,7 @@ export default function HomePage() {
             <p className="cc-note">Reported reduction in water loss, per GeoClim&apos;s published case results.</p>
           </div>
         </Reveal>
-        <Reveal className="case-card" delay="0.2s">
+        <Reveal className="case-card tr" delay="0.2s">
           <div className="cc-visual cc-photo" style={{ backgroundImage: 'url(/images/card-transport.jpg)' }} aria-hidden="true" />
           <div className="cc-body">
             <div className="cc-tag">Transportation · Tanzania</div>
