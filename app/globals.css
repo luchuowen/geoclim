@@ -638,6 +638,9 @@ a {
   font-weight: 600;
   line-height: 1.5;
 }
+.home-triad-head {
+  text-align: center;
+}
 .triad-grid {
   max-width: 1240px;
   margin: 0 auto;

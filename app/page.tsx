@@ -76,7 +76,7 @@ export default function HomePage() {
       </div>
 
       <section className="triad">
-        <div className="triad-head">
+        <div className="triad-head home-triad-head">
           Three disciplines, one platform: spatial intelligence tells you what&apos;s happening, enterprise
           integration tells you what to do about it, and AI makes the read faster each time.
         </div>
