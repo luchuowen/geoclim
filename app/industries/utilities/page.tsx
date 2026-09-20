@@ -125,9 +125,6 @@ export default function UtilitiesIndustryPage() {
         </svg>
         <HeroTexture />
         <div className="page-hero-inner util-hero-inner">
-          <div className="breadcrumb">
-            <Link href="/">Home</Link> <span>/</span> <Link href="/industries">Industries</Link> <span>/</span> Utilities
-          </div>
           <div className="util-eyebrow">
             <span className="seg">
               <span className="dot w" /> Water
@@ -206,39 +203,49 @@ export default function UtilitiesIndustryPage() {
           <h2>Map the network. Detect the loss. Predict the failure.</h2>
         </div>
         <div className="util-mdp-rail">
-          <Reveal className="util-mdp-stage w">
-            <div className="util-mdp-node">01</div>
-            <div className="util-mdp-body">
-              <h3>Map it</h3>
-              <span className="util-mdp-tools">Penta-B Maps &amp; Apps · SMART Real-Time GIS</span>
-              <p>
-                Every pipe, line, valve, meter, and substation gets a verified spatial record — the as-built network
-                reconciled against what&apos;s actually in the ground, not what the original design drawings say.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal className="util-mdp-stage p" delay="0.08s">
-            <div className="util-mdp-node">02</div>
-            <div className="util-mdp-body">
-              <h3>Detect it</h3>
-              <span className="util-mdp-tools">RockEye Analytics · Smart Meter / IoT Integration</span>
-              <p>
-                Pressure, flow, and load data from smart meters and sensors overlays the network map in real time —
-                turning a support ticket or a billing anomaly into a specific point on a specific line.
-              </p>
-            </div>
-          </Reveal>
-          <Reveal className="util-mdp-stage g" delay="0.16s">
-            <div className="util-mdp-node">03</div>
-            <div className="util-mdp-body">
-              <h3>Predict it</h3>
-              <span className="util-mdp-tools">RockEye Predictive Maintenance · AI Risk Scoring</span>
-              <p>
-                Failure history, asset age, and load patterns combine into a risk score per segment — so crews are
-                dispatched to what&apos;s about to fail, not what already has.
-              </p>
-            </div>
-          </Reveal>
+          <div className="util-mdp-line" aria-hidden="true" />
+          <div className="util-mdp-grid">
+            <Reveal className="util-mdp-stage w">
+              <div className="util-mdp-node-row">
+                <div className="util-mdp-node">01</div>
+              </div>
+              <div className="util-mdp-body">
+                <h3>Map it</h3>
+                <span className="util-mdp-tools">Penta-B Maps &amp; Apps · SMART Real-Time GIS</span>
+                <p>
+                  Every pipe, line, valve, meter, and substation gets a verified spatial record — the as-built
+                  network reconciled against what&apos;s actually in the ground, not what the original design
+                  drawings say.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal className="util-mdp-stage p" delay="0.08s">
+              <div className="util-mdp-node-row">
+                <div className="util-mdp-node">02</div>
+              </div>
+              <div className="util-mdp-body">
+                <h3>Detect it</h3>
+                <span className="util-mdp-tools">RockEye Analytics · Smart Meter / IoT Integration</span>
+                <p>
+                  Pressure, flow, and load data from smart meters and sensors overlays the network map in real
+                  time — turning a support ticket or a billing anomaly into a specific point on a specific line.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal className="util-mdp-stage g" delay="0.16s">
+              <div className="util-mdp-node-row">
+                <div className="util-mdp-node">03</div>
+              </div>
+              <div className="util-mdp-body">
+                <h3>Predict it</h3>
+                <span className="util-mdp-tools">RockEye Predictive Maintenance · AI Risk Scoring</span>
+                <p>
+                  Failure history, asset age, and load patterns combine into a risk score per segment — so crews
+                  are dispatched to what&apos;s about to fail, not what already has.
+                </p>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -251,16 +258,22 @@ export default function UtilitiesIndustryPage() {
         <div className="util-type-grid">
           {TYPES.map((t) => (
             <Reveal className={`util-type-card ${t.key}`} key={t.key}>
-              <div className="utc-icon">
-                <svg viewBox="0 0 24 24">{t.icon}</svg>
+              <div className="utc-head">
+                <div className="utc-icon">
+                  <svg viewBox="0 0 24 24">{t.icon}</svg>
+                </div>
+                <div>
+                  <h3>{t.name}</h3>
+                  <span className="utc-tag">{t.tag}</span>
+                </div>
               </div>
-              <h3>{t.name}</h3>
-              <span className="utc-tag">{t.tag}</span>
-              <ul>
-                {t.items.map((it) => (
-                  <li key={it}>{it}</li>
-                ))}
-              </ul>
+              <div className="utc-body">
+                <ul>
+                  {t.items.map((it) => (
+                    <li key={it}>{it}</li>
+                  ))}
+                </ul>
+              </div>
             </Reveal>
           ))}
         </div>
