@@ -118,7 +118,7 @@ export default function ContactForm() {
               id="contact-name"
               name="name"
               type="text"
-              placeholder="Jane Wanjiru"
+              placeholder="Enter Your Name"
               autoComplete="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -137,7 +137,7 @@ export default function ContactForm() {
               id="contact-org"
               name="organisation"
               type="text"
-              placeholder="Ministry / Company"
+              placeholder="Enter Your Organization"
               autoComplete="organization"
               value={organisation}
               onChange={(e) => setOrganisation(e.target.value)}
@@ -152,7 +152,7 @@ export default function ContactForm() {
               id="contact-email"
               name="email"
               type="email"
-              placeholder="jane@organization.org"
+              placeholder="Enter Your Email"
               autoComplete="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

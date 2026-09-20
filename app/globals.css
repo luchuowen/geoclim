@@ -1678,8 +1678,11 @@ a {
   }
 }
 .case-card {
-  border-top: 2px solid;
-  padding-top: 18px;
+  border: 1px solid var(--panel-line);
+  border-top: 3px solid;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
   opacity: 0;
   transform: translateY(26px);
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1715,12 +1718,11 @@ a {
 .case-card .cc-visual {
   aspect-ratio: 16 / 11;
   position: relative;
-  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 18px;
 }
 .case-card .cc-body {
-  padding: 0 6px;
+  padding: 0 18px 22px;
   text-align: center;
 }
 .case-card .cc-tag {

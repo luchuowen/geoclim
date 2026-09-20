@@ -265,9 +265,6 @@ export default function HomePage() {
           <Link className="pill-cta" href="/contact">
             Request a consultation
           </Link>
-          <Link className="ghost-cta" href="/contact">
-            Talk to us
-          </Link>
         </div>
       </section>
     </>
