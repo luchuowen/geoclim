@@ -73,10 +73,12 @@ export default function WorkPage() {
           <h2>Every engagement follows the same arc</h2>
         </div>
         <div className="work-arc-outer">
-          <svg className="work-arc-svg" viewBox="0 0 1200 80" preserveAspectRatio="none" aria-hidden="true">
-            <path
-              d="M120,60 C 400,0 800,0 1080,60"
-              fill="none"
+          <svg className="work-arc-svg" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true">
+            <line
+              x1="120"
+              y1="22"
+              x2="1080"
+              y2="22"
               stroke="#1f7a52"
               strokeWidth={2}
               strokeDasharray="2 8"
