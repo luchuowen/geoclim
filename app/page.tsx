@@ -13,7 +13,9 @@ export default function HomePage() {
         <HeroTexture />
         <div className="home-hero-inner">
           <h1 className="h1-xl">
-            Smart technology <span className="accent">that turns data into action.</span>
+            Smart technology
+            <br />
+            <span className="accent">that turns data into action.</span>
           </h1>
           <p className="home-hero-sub">
             GeoClim East Africa brings geospatial intelligence, enterprise systems, and AI together in one connected
