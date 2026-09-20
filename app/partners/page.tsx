@@ -20,18 +20,18 @@ export default function PartnersPage() {
             Home <span>/</span> Partners
           </div>
           <h1>
-            Who we build <span className="accent">with.</span>
+            Our Technology <span className="accent">Partners</span>
           </h1>
           <p>
-            Two named technology partnerships anchor the platform. Everyone else we work alongside is grouped
-            honestly, by relationship — not padded with logos we can&apos;t stand behind.
+            We work with trusted technology partners who help us deliver practical, reliable solutions for our
+            clients. Each partnership is chosen for the value it brings to the work.
           </p>
         </div>
       </header>
 
       <section className="section-head">
-        <div className="kicker">Technology partners</div>
-        <h2>Named, not implied</h2>
+        <div className="kicker">Technology Partners</div>
+        <h2>Trusted names behind our solutions</h2>
       </section>
       <div className="partner-block">
         <div className="partner-mark">
