@@ -76,11 +76,11 @@ export default function AboutPage() {
             Home <span>/</span> About
           </div>
           <h1>
-            A regional company, <span className="accent">built for the long delivery.</span>
+            <span className="accent">Built for Africa</span>
           </h1>
           <p>
-            GeoClim East Africa is a professional services and technology company delivering geospatial
-            intelligence, AI, and digital transformation across Africa, headquartered in Nairobi.
+            GeoClim East Africa is a Nairobi-based technology and professional services company helping
+            organisations across Africa use geospatial intelligence, AI and digital technology to work smarter.
           </p>
         </div>
       </header>
@@ -120,16 +120,6 @@ export default function AboutPage() {
           </div>
         ))}
       </div>
-
-      <section className="section-head">
-        <div className="kicker">Leadership</div>
-        <h2>Bios to come</h2>
-        <p>
-          This section is reserved for leadership profiles, headshots, and governance detail — a gap the current
-          site also has. We need names, titles, and short bios from GeoClim to complete it; we won&apos;t invent
-          them.
-        </p>
-      </section>
 
       <RegionStrip />
 
